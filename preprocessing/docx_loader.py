@@ -1,6 +1,5 @@
 from docx import Document
 
-
 def load_docx(file_path: str) -> str:
     """
     DOCX 문서를 Markdown 형태의 문자열로 변환한다.
