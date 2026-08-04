@@ -13,12 +13,12 @@ ChromaDB와 LLM을 활용한 Retrieval Augmented Generation 기반 질의응답 
 
 ## Architecture
 
-User
- ↓
-FastAPI
- ↓
-Retriever
- ↓
-ChromaDB
- ↓
-LLM
+User <br>
+ ↓<br>
+FastAPI<br>
+ ↓<br>
+Retriever<br>
+ ↓<br>
+ChromaDB<br>
+ ↓<br>
+LLM<br>
