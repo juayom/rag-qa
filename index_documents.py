@@ -2,29 +2,25 @@ from pathlib import Path
 
 from preprocessing.document_loader import load_document
 from preprocessing.cleaner import clean_markdown
-from preprocessing.chunkers import sentence_split
+from preprocessing.chunkers import sentence_split, structured_split
 
 from vectorstore.embedding import get_embedding_model
-from vectorstore.chroma_store import get_index, save_nodes
+from vectorstore.qdrant_store import get_index, reset_collection, save_nodes
 
 # Embedding Model
 embed_model = get_embedding_model()
 
-# LlamaIndex 생성
-index = get_index(embed_model)
-
-DATA_DIR = Path("data")
-
-files = []
-
-for ext in ("*.pdf", "*.docx", "*.txt"):
-    files.extend(DATA_DIR.rglob(ext))
+DOCUMENT_COLLECTIONS = {
+    Path("data/txt/이즈파크 회사 소개서.txt"): "ispark_company_profile",
+    Path("data/pdf/현명한 신용관리 요령.pdf"): "credit_management_guide",
+    Path("data/docx/실사유 코드.docx"): "due_diligence_reason_codes",
+}
 
 print("=" * 80)
-print(f"총 {len(files)}개의 문서를 발견했습니다.")
+print(f"총 {len(DOCUMENT_COLLECTIONS)}개의 문서를 발견했습니다.")
 print("=" * 80)
 
-for file_path in files:
+for file_path, collection_name in DOCUMENT_COLLECTIONS.items():
 
     print(f"\n처리 중 : {file_path.name}")
 
@@ -34,15 +30,23 @@ for file_path in files:
 
         text = clean_markdown(text)
 
-        nodes = sentence_split(text)
+        if file_path.suffix.lower() in (".pdf", ".docx"):
+            nodes = structured_split(text)
+            splitter_name = "StructuredSplitter"
+        else:
+            nodes = sentence_split(text)
+            splitter_name = "SentenceSplitter"
 
         print(f"Chunk 개수 : {len(nodes)}")
+
+        reset_collection(collection_name)
+        index = get_index(embed_model, collection_name)
 
         save_nodes(
             index=index,
             nodes=nodes,
             file_name=file_path.name,
-            splitter_name="SentenceSplitter"
+            splitter_name=splitter_name
         )
 
         print("저장 완료")

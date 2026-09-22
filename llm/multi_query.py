@@ -27,7 +27,7 @@ Vector Database 검색 Recall을 높이는 것이 목표입니다.
 
 4. 동일한 의미의 질문만 생성한다.
 
-5. 최대 3개의 질문을 생성한다.
+5. 원본 질문과 중복되지 않는 추가 질문을 최대 3개 생성한다.
 
 6. 질문만 출력한다.
 한 줄에 하나씩 출력한다.
@@ -54,6 +54,6 @@ Multi Queries
         q.strip()
         for q in response.choices[0].message.content.split("\n")
         if q.strip()
-    ]
+    ][:3]
 
     return queries

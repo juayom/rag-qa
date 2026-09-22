@@ -16,9 +16,6 @@ data/
 .vscode/
 
 
-# ChromaDB
-chroma_db/
-
 # Distribution / packaging
 .Python
 build/

@@ -1,0 +1,330 @@
+{
+  "version": "1.0",
+  "source_doc": "docs/rag/RAG_EVALUATION_QUESTIONS.md",
+  "note": "RAG_EVALUATION_QUESTIONS.md와 동일한 질문셋이다. 두 파일 중 하나만 수정하면 안 되고, 변경 시 반드시 양쪽을 함께 수정하고 RAG_EVALUATION_QUESTIONS.md 16항 변경 이력에 기록한다.",
+  "collections": {
+    "이즈파크 회사 소개서.txt": "ispark_company_profile",
+    "현명한 신용관리 요령.pdf": "credit_management_guide",
+    "실사유 코드.docx": "due_diligence_reason_codes"
+  },
+  "warmup_question": "이즈파크는 어떤 회사인가요?",
+  "refusal_patterns": [
+    "찾을 수 없",
+    "확인할 수 없",
+    "제공된 문서에는"
+  ],
+  "timing_question_ids": [
+    "F-01",
+    "L-01",
+    "K-01",
+    "S-02",
+    "A-01",
+    "C-01",
+    "O-02"
+  ],
+  "questions": [
+    {
+      "id": "F-01",
+      "type": "일반 사실형",
+      "question": "이즈파크의 대표이사와 설립일은 언제인가요?",
+      "expected": [
+        { "collection": "ispark_company_profile", "chunks": [1] }
+      ],
+      "expected_summary": "대표이사는 김갑산, 설립일은 2009년.",
+      "expected_items": [
+        ["김갑산"],
+        ["2009"]
+      ]
+    },
+    {
+      "id": "F-02",
+      "type": "일반 사실형",
+      "question": "10만원 이상의 금액을 며칠 이상 연체하면 신용등급이 하락하나요?",
+      "expected": [
+        { "collection": "credit_management_guide", "chunks": [3, 4] }
+      ],
+      "expected_summary": "10만원 이상의 금액을 5영업일 이상 연체하면 신용평점이나 신용등급이 하락한다.",
+      "expected_items": [
+        ["5영업일", "5 영업일", "5영업 일"]
+      ]
+    },
+    {
+      "id": "F-03",
+      "type": "일반 사실형",
+      "question": "피보험자격 상실신고서는 언제까지 어디에 제출해야 하나요?",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [9] }
+      ],
+      "expected_summary": "퇴사일이 속하는 달의 다음 달 15일까지 관할 근로복지공단에 제출.",
+      "expected_items": [
+        ["15일"],
+        ["근로복지공단"]
+      ]
+    },
+    {
+      "id": "L-01",
+      "type": "전체/목록형",
+      "question": "현명한 신용관리 요령 10가지를 모두 알려주세요.",
+      "expected": [
+        { "collection": "credit_management_guide", "chunks": [3, 5, 6, 7, 8, 10, 11, 12, 13] }
+      ],
+      "expected_summary": "신용관리 요령 10개 항목 전부.",
+      "expected_items": [
+        ["신용등급에 관심", "관심을 기울", "관심을 갖", "관심 기울"],
+        ["소액"],
+        ["체크카드"],
+        ["오래된"],
+        ["과도한 빚", "과도한 채무", "과도한 대출"],
+        ["자동이체", "주거래"],
+        ["보증"],
+        ["대출 금융회사", "대부업체", "제2금융권"],
+        ["가점"],
+        ["체험단"]
+      ]
+    },
+    {
+      "id": "L-02",
+      "type": "전체/목록형",
+      "question": "이즈파크의 주요 사업 영역을 모두 알려주세요.",
+      "expected": [
+        { "collection": "ispark_company_profile", "chunks": [1, 2] }
+      ],
+      "expected_summary": "스마트 제조 솔루션 / 디지털 트윈 및 XR(메타버스) / AI 및 클라우드 서비스 3개 영역.",
+      "expected_items": [
+        ["스마트 제조", "제조 솔루션", "Smart Manufacturing"],
+        ["디지털 트윈", "XR", "메타버스"],
+        ["클라우드"]
+      ]
+    },
+    {
+      "id": "L-03",
+      "type": "전체/목록형",
+      "question": "변경 후 상실사유 중분류 코드 8개를 모두 나열해주세요.",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [2, 3, 4] }
+      ],
+      "expected_summary": "11 / 12 / 22 / 23 / 26 / 31 / 32 / 41 총 8개 코드.",
+      "expected_items": [
+        ["개인사정"],
+        ["사업장 이전", "근로조건"],
+        ["폐업", "도산"],
+        ["경영상 필요", "인원감축", "인원 감축"],
+        ["귀책사유", "징계해고"],
+        ["정년"],
+        ["계약만료", "공사종료"],
+        ["고용보험 비적용", "이중고용", "이중 고용"]
+      ]
+    },
+    {
+      "id": "L-04",
+      "type": "전체/목록형",
+      "question": "이즈파크의 핵심 가치 3가지를 모두 알려주세요.",
+      "expected": [
+        { "collection": "ispark_company_profile", "chunks": [3, 4] }
+      ],
+      "expected_summary": "고객 중심 / 지속적인 혁신 / 신뢰와 상생 파트너십.",
+      "expected_items": [
+        ["고객 중심", "Customer Centric"],
+        ["지속적인 혁신", "Continuous Innovation"],
+        ["신뢰와 상생", "파트너십", "Partnership"]
+      ]
+    },
+    {
+      "id": "K-01",
+      "type": "정확한 키워드/코드형",
+      "question": "코드 26은 어떤 경우에 적용되나요?",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [7] }
+      ],
+      "expected_summary": "근로자의 중대한 귀책사유로 인한 징계해고·권고사직. 실업급여 수급이 제한될 수 있다.",
+      "expected_items": [
+        ["귀책사유"],
+        ["징계해고"]
+      ]
+    },
+    {
+      "id": "K-02",
+      "type": "정확한 키워드/코드형",
+      "question": "자진퇴사를 권고사직으로 허위 신고하면 과태료가 얼마인가요?",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [8] }
+      ],
+      "expected_summary": "사업장에 최대 300만 원 이하의 과태료가 부과될 수 있다.",
+      "expected_items": [
+        ["300만"]
+      ]
+    },
+    {
+      "id": "K-03",
+      "type": "정확한 키워드/코드형",
+      "question": "3DEXPERIENCE 플랫폼에 통합된 핵심 어플리케이션 이름을 알려주세요.",
+      "expected": [
+        { "collection": "ispark_company_profile", "chunks": [6] }
+      ],
+      "expected_summary": "CATIA, SIMULIA, ENOVIA, DELMIA.",
+      "expected_items": [
+        ["CATIA"],
+        ["SIMULIA"],
+        ["ENOVIA"],
+        ["DELMIA"]
+      ]
+    },
+    {
+      "id": "K-04",
+      "type": "정확한 키워드/코드형",
+      "question": "코드 32는 무엇인가요?",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [3, 5] }
+      ],
+      "expected_summary": "32번은 계약만료, 공사종료.",
+      "expected_items": [
+        ["계약만료"],
+        ["공사종료"]
+      ]
+    },
+    {
+      "id": "S-01",
+      "type": "의미 기반 질문",
+      "question": "빚을 갚지 못하고 계속 밀리면 어떤 불이익이 생기나요?",
+      "expected": [
+        { "collection": "credit_management_guide", "chunks": [3, 4, 6, 8] }
+      ],
+      "expected_summary": "연체는 신용등급 평가에 가장 부정적인 요인이며, 대출 거절이나 높은 금리로 이어진다.",
+      "expected_items": [
+        ["연체"],
+        ["신용등급"]
+      ]
+    },
+    {
+      "id": "S-02",
+      "type": "의미 기반 질문",
+      "question": "회사가 멀리 이전해서 출퇴근이 너무 힘들어져 그만두면 실업급여를 받을 수 있나요?",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [6] }
+      ],
+      "expected_summary": "코드 12. 왕복 3시간 이상이면 자진퇴사 형태여도 실업급여 수급이 가능하다.",
+      "expected_items": [
+        ["3시간"],
+        ["실업급여"]
+      ]
+    },
+    {
+      "id": "S-03",
+      "type": "의미 기반 질문",
+      "question": "이즈파크는 환경 보호에 어떤 기여를 하고 있나요?",
+      "expected": [
+        { "collection": "ispark_company_profile", "chunks": [9, 10] }
+      ],
+      "expected_summary": "ESG 경영. 디지털 트윈·3D 시뮬레이션으로 시제품 제작을 줄여 폐기물 감소와 탄소 배출 절감에 기여.",
+      "expected_items": [
+        ["ESG", "친환경"],
+        ["탄소", "폐기물"]
+      ]
+    },
+    {
+      "id": "A-01",
+      "type": "짧고 모호한 질문",
+      "question": "신용등급?",
+      "expected": [
+        { "collection": "credit_management_guide", "chunks": [3, 5] }
+      ],
+      "expected_summary": "신용등급은 금융거래의 신분증과 같으며 대출 가능여부·한도·금리를 결정하는 기본지표.",
+      "expected_items": [
+        ["신용등급"]
+      ]
+    },
+    {
+      "id": "A-02",
+      "type": "짧고 모호한 질문",
+      "question": "권고사직",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [3, 7, 8] }
+      ],
+      "expected_summary": "권고사직은 코드 23 또는 코드 26에 해당할 수 있다.",
+      "expected_items": [
+        ["권고사직"]
+      ]
+    },
+    {
+      "id": "A-03",
+      "type": "짧고 모호한 질문",
+      "question": "이즈파크",
+      "expected": [
+        { "collection": "ispark_company_profile", "chunks": [1] }
+      ],
+      "expected_summary": "2009년 설립된 ICT 솔루션 전문기업.",
+      "expected_items": [
+        ["이즈파크"]
+      ]
+    },
+    {
+      "id": "C-01",
+      "type": "복합 질문",
+      "question": "코드 23과 코드 26의 실업급여 수급 차이는 무엇이고, 각각 어떤 경우에 적용되나요?",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [7] }
+      ],
+      "expected_summary": "23번은 경영상 필요·인원감축, 26번은 근로자 귀책사유. 26번은 23번과 달리 실업급여 수급이 제한될 수 있다.",
+      "expected_items": [
+        ["경영 악화", "부서 폐지", "직제 개편", "희망퇴직", "명예퇴직", "인원"],
+        ["귀책사유", "횡령", "무단결근", "기밀 누설"],
+        ["실업급여"]
+      ]
+    },
+    {
+      "id": "C-02",
+      "type": "복합 질문",
+      "question": "신용등급을 관리하려면 카드는 어떻게 쓰고, 연체가 이미 생겼을 때는 어떤 순서로 갚아야 하나요?",
+      "expected": [
+        { "collection": "credit_management_guide", "chunks": [6, 8] }
+      ],
+      "expected_summary": "체크카드 사용 권장, 이미 발생한 연체는 가장 오래된 건부터 상환.",
+      "expected_items": [
+        ["체크카드"],
+        ["오래된"]
+      ]
+    },
+    {
+      "id": "C-03",
+      "type": "복합 질문",
+      "question": "이즈파크의 설립 연도와, 타인을 위한 보증이 신용등급에 미치는 영향을 함께 알려주세요.",
+      "expected": [
+        { "collection": "ispark_company_profile", "chunks": [1] },
+        { "collection": "credit_management_guide", "chunks": [10, 12] }
+      ],
+      "expected_summary": "2009년 설립. 보증내역은 신용조회회사에 전달되어 신용등급 산정에 반영되고, 채무자가 연체하지 않아도 보증인의 신용등급이 하락할 수 있다.",
+      "expected_items": [
+        ["2009"],
+        ["보증"]
+      ],
+      "cross_collection": true
+    },
+    {
+      "id": "O-01",
+      "type": "문서 범위 밖 질문",
+      "question": "양자역학의 불확정성 원리를 설명해주세요.",
+      "expected": [],
+      "expected_summary": "문서에서 찾을 수 없다고 응답해야 한다.",
+      "expected_items": [],
+      "out_of_scope": true
+    },
+    {
+      "id": "O-02",
+      "type": "문서 범위 밖 질문",
+      "question": "이즈파크의 2025년 연매출과 영업이익을 알려주세요.",
+      "expected": [],
+      "expected_summary": "문서에서 찾을 수 없다고 응답해야 한다. 수치를 추정해 답하면 실패.",
+      "expected_items": [],
+      "out_of_scope": true
+    },
+    {
+      "id": "O-03",
+      "type": "문서 범위 밖 질문",
+      "question": "이즈파크의 임직원 수와 평균 연봉은 얼마인가요?",
+      "expected": [],
+      "expected_summary": "문서에서 찾을 수 없다고 응답해야 한다.",
+      "expected_items": [],
+      "out_of_scope": true
+    }
+  ]
+}

@@ -2,11 +2,11 @@ fastapi
 uvicorn
 openai
 python-dotenv
-chromadb
 llama-index
 llama-index-core
 sentence-transformers
-llama-index-vector-stores-chroma
+qdrant-client
+llama-index-vector-stores-qdrant
 torch
 transformers
 python-docx
