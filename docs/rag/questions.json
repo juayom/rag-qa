@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.2",
   "source_doc": "docs/rag/RAG_EVALUATION_QUESTIONS.md",
   "note": "RAG_EVALUATION_QUESTIONS.md와 동일한 질문셋이다. 두 파일 중 하나만 수정하면 안 되고, 변경 시 반드시 양쪽을 함께 수정하고 RAG_EVALUATION_QUESTIONS.md 16항 변경 이력에 기록한다.",
   "collections": {
@@ -41,7 +41,7 @@
       "type": "일반 사실형",
       "question": "10만원 이상의 금액을 며칠 이상 연체하면 신용등급이 하락하나요?",
       "expected": [
-        { "collection": "credit_management_guide", "chunks": [3, 4] }
+        { "collection": "credit_management_guide", "chunks": [2, 3] }
       ],
       "expected_summary": "10만원 이상의 금액을 5영업일 이상 연체하면 신용평점이나 신용등급이 하락한다.",
       "expected_items": [
@@ -66,7 +66,7 @@
       "type": "전체/목록형",
       "question": "현명한 신용관리 요령 10가지를 모두 알려주세요.",
       "expected": [
-        { "collection": "credit_management_guide", "chunks": [3, 5, 6, 7, 8, 10, 11, 12, 13] }
+        { "collection": "credit_management_guide", "chunks": [3, 4, 5, 6, 7] }
       ],
       "expected_summary": "신용관리 요령 10개 항목 전부.",
       "expected_items": [
@@ -187,7 +187,7 @@
       "type": "의미 기반 질문",
       "question": "빚을 갚지 못하고 계속 밀리면 어떤 불이익이 생기나요?",
       "expected": [
-        { "collection": "credit_management_guide", "chunks": [3, 4, 6, 8] }
+        { "collection": "credit_management_guide", "chunks": [2, 3, 4] }
       ],
       "expected_summary": "연체는 신용등급 평가에 가장 부정적인 요인이며, 대출 거절이나 높은 금리로 이어진다.",
       "expected_items": [
@@ -226,7 +226,7 @@
       "type": "짧고 모호한 질문",
       "question": "신용등급?",
       "expected": [
-        { "collection": "credit_management_guide", "chunks": [3, 5] }
+        { "collection": "credit_management_guide", "chunks": [3] }
       ],
       "expected_summary": "신용등급은 금융거래의 신분증과 같으며 대출 가능여부·한도·금리를 결정하는 기본지표.",
       "expected_items": [
@@ -276,7 +276,7 @@
       "type": "복합 질문",
       "question": "신용등급을 관리하려면 카드는 어떻게 쓰고, 연체가 이미 생겼을 때는 어떤 순서로 갚아야 하나요?",
       "expected": [
-        { "collection": "credit_management_guide", "chunks": [6, 8] }
+        { "collection": "credit_management_guide", "chunks": [4] }
       ],
       "expected_summary": "체크카드 사용 권장, 이미 발생한 연체는 가장 오래된 건부터 상환.",
       "expected_items": [
@@ -290,7 +290,7 @@
       "question": "이즈파크의 설립 연도와, 타인을 위한 보증이 신용등급에 미치는 영향을 함께 알려주세요.",
       "expected": [
         { "collection": "ispark_company_profile", "chunks": [1] },
-        { "collection": "credit_management_guide", "chunks": [10, 12] }
+        { "collection": "credit_management_guide", "chunks": [6] }
       ],
       "expected_summary": "2009년 설립. 보증내역은 신용조회회사에 전달되어 신용등급 산정에 반영되고, 채무자가 연체하지 않아도 보증인의 신용등급이 하락할 수 있다.",
       "expected_items": [
@@ -325,6 +325,92 @@
       "expected_summary": "문서에서 찾을 수 없다고 응답해야 한다.",
       "expected_items": [],
       "out_of_scope": true
+    },
+    {
+      "id": "H-01",
+      "type": "의미 기반 질문",
+      "question": "직원이 회사 돈에 손을 대서 내보냈습니다. 어떤 사유 코드로 신고해야 하나요?",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [7] }
+      ],
+      "expected_summary": "코드 26 (근로자 귀책사유에 의한 징계해고·권고사직).",
+      "expected_items": [
+        ["26"]
+      ]
+    },
+    {
+      "id": "H-02",
+      "type": "정확한 키워드/코드형",
+      "question": "26번 코드와 23번 코드는 어떻게 다른가요?",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [7] }
+      ],
+      "expected_summary": "23번은 경영상 필요·인원 감축에 의한 퇴사, 26번은 근로자 귀책사유에 의한 징계해고·권고사직. 26번은 실업급여 수급이 제한될 수 있다.",
+      "expected_items": [
+        ["경영상", "인원 감축", "경영 악화"],
+        ["귀책사유", "징계해고"]
+      ]
+    },
+    {
+      "id": "H-03",
+      "type": "정확한 키워드/코드형",
+      "question": "사업장 이전으로 출퇴근이 왕복 몇 시간 이상 걸리게 되면 자진퇴사해도 실업급여를 받을 수 있나요?",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [6] }
+      ],
+      "expected_summary": "왕복 3시간 이상.",
+      "expected_items": [
+        ["3시간", "3 시간"]
+      ]
+    },
+    {
+      "id": "H-04",
+      "type": "정확한 키워드/코드형",
+      "question": "고용보험 비적용과 이중고용은 변경 후 몇 번 코드로 통합되었나요?",
+      "expected": [
+        { "collection": "due_diligence_reason_codes", "chunks": [4, 5] }
+      ],
+      "expected_summary": "41번 단일 코드로 병합.",
+      "expected_items": [
+        ["41"]
+      ]
+    },
+    {
+      "id": "H-05",
+      "type": "정확한 키워드/코드형",
+      "question": "금융감독원이 개설하기로 한 금융소비자정보 포털사이트의 이름은 무엇인가요?",
+      "expected": [
+        { "collection": "credit_management_guide", "chunks": [1] }
+      ],
+      "expected_summary": "파인(FINE).",
+      "expected_items": [
+        ["파인", "FINE"]
+      ]
+    },
+    {
+      "id": "H-06",
+      "type": "의미 기반 질문",
+      "question": "다른 사람 빚보증을 서주면 내 신용에 문제가 생기나요?",
+      "expected": [
+        { "collection": "credit_management_guide", "chunks": [6] }
+      ],
+      "expected_summary": "보증내역이 신용조회회사에 보내져 신용등급 산정에 반영되고, 채무자가 연체하지 않아도 보증인의 신용등급이 하락할 수 있다.",
+      "expected_items": [
+        ["하락"],
+        ["보증"]
+      ]
+    },
+    {
+      "id": "H-07",
+      "type": "의미 기반 질문",
+      "question": "3DEXPERIENCE 플랫폼에서 설계 작업에 쓰이는 애플리케이션은 무엇인가요?",
+      "expected": [
+        { "collection": "ispark_company_profile", "chunks": [6] }
+      ],
+      "expected_summary": "CATIA.",
+      "expected_items": [
+        ["CATIA"]
+      ]
     }
   ]
 }

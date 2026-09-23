@@ -1,0 +1,2649 @@
+{
+  "config": "baseline_hard",
+  "started_at": "2026-09-22 16:04:05",
+  "finished_at": "2026-09-22 16:05:53",
+  "command_line": "python scripts/eval_run.py --config baseline_hard --only H-01,H-02,H-03,H-04,H-05,H-06,H-07 --note \"v1.1 hard 문항 7개. 커밋 7940974 동일 인덱스(10/13/9), 재인덱싱 없음. 시간 측정 대상 아님(repeat 1).\"",
+  "api_base": "http://127.0.0.1:8001",
+  "endpoint": "/chat",
+  "repeat": 1,
+  "questions_file": "C:\\Users\\User\\jua\\university\\ispark\\01. pre_ojt\\workspace\\docs\\rag\\questions.json",
+  "questions_version": "1.1",
+  "question_count": 7,
+  "timing_question_ids": [],
+  "reranker": "Dongjin-kr/ko-reranker (Cross Encoder, llm/reranker.py)",
+  "note": "v1.1 hard 문항 7개. 커밋 7940974 동일 인덱스(10/13/9), 재인덱싱 없음. 시간 측정 대상 아님(repeat 1).",
+  "warmup": {
+    "question_id": "__warmup__",
+    "type": "워밍업",
+    "run": 0,
+    "question": "이즈파크는 어떤 회사인가요?",
+    "out_of_scope": false,
+    "selected_collections": "ALL(3) - Routing 미적용",
+    "retrieval_top_k": 8,
+    "retrieval_candidate_count": 24,
+    "rerank_candidate_count": 8,
+    "final_context_count": 3,
+    "multi_query_used": false,
+    "multi_queries": [],
+    "retrieved_docs": [
+      {
+        "rank": 1,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 1,
+        "splitter": "SentenceSplitter",
+        "retriever_score": 0.6258,
+        "rerank_score": 0.999,
+        "text_excerpt": "[이즈파크 회사 소개서]\n\n[ Infinite Solution Park - 해법을 향한 무한한 공간, 이즈파크 ]\n\n1. CEO 인사말\n이즈파크는 2009년 창업 이래, 4차산업혁명 핵심 ICT 솔루션 전문기업으로서 고객의 니즈에 맞는 솔루션과 새로운 기술 서비스를 통해 가치를 창출하고 산업발전에 기여하기 위한 최선의 노력을 다하고 있습니다.\n급변하는 IT"
+      },
+      {
+        "rank": 2,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 4,
+        "splitter": "SentenceSplitter",
+        "retriever_score": 0.5144,
+        "rerank_score": 0.9917,
+        "text_excerpt": "둘째, 지속적인 혁신(Continuous Innovation)입니다. 빠르게 변화하는 4차 산업혁명 시대에 발맞춰 신기술(AI, 빅데이터, XR 등)에 대한 R&D 투자를 아끼지 않으며, 기술 리더십을 굳건히 확보하고 있습니다. 셋째, 신뢰와 상생 파트너십(Trust & Partnership)입니다. 고객, 임직원, 글로벌 협력사와의 투명한 소통을 통해 장"
+      },
+      {
+        "rank": 3,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 10,
+        "splitter": "SentenceSplitter",
+        "retriever_score": 0.4974,
+        "rerank_score": 0.9803,
+        "text_excerpt": "당사가 제공하는 디지털 트윈과 3D 시뮬레이션 기술은 물리적인 시제품 제작(Prototyping) 횟수를 획기적으로 줄여주어 산업 현장의 폐기물 감소와 탄소 배출 절감에 직접적으로 기여하고 있습니다. 또한 임직원을 위한 일하기 좋은 환경 조성, 지역 사회와의 상생을 위한 꾸준한 사회 공헌 활동, 투명하고 윤리적인 경영 활동을 통해 사회적 책임을 다하는 존경"
+      }
+    ],
+    "retrieval_candidates": [
+      {
+        "rank": 1,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 1,
+        "score": 0.6258,
+        "passed_to_reranker": true,
+        "text_excerpt": "[이즈파크 회사 소개서]\n\n[ Infinite Solution Park - 해법을 향한 무한한 공간, 이즈파크 ]\n\n1. CEO 인사말\n이즈파크는 2009년 창업 이래, 4차산업혁명 핵심 ICT 솔루션 전문기업으로서 고객의 니즈에 맞는 솔루션과 새로운 기술 서비스를 통해 가치를 창출하고 산업발전에 기여하기 위한 최선의 노력을 다하고 있습니다.\n급변하는 IT"
+      },
+      {
+        "rank": 2,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 3,
+        "score": 0.554,
+        "passed_to_reranker": true,
+        "text_excerpt": "핵심 경쟁력\n- 풍부한 산업별(항공, 자동차, 하이테크, 소비재 등) 구축 경험과 노하우\n- 검증된 글로벌 솔루션(다쏘시스템 등)과 자체 개발 솔루션의 융합\n- 전문 엔지니어 및 개발 인력을 통한 체계적인 기술 지원 및 유지보수\n\n5. 오시는 길 및 연락처\n- 본사: 서울특별시 금천구 가산디지털2로 43-14 한화비즈메트로2차 803~820호\n- R&D 센"
+      },
+      {
+        "rank": 3,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 5,
+        "score": 0.5538,
+        "passed_to_reranker": true,
+        "text_excerpt": "- [성장기] 2010년대 후반부터는 스마트 팩토리(Smart Factory) 구축 사업으로 비즈니스 영역을 대폭 확장하였습니다. MES, QMS 등 제조 실행 및 품질 관리 시스템을 고도화하며, 항공우주, 자동차 부품, 하이테크, 산업 기계 등 다양한 핵심 산업군에 성공적인 시스템 구축 레퍼런스를 확보했습니다.\n- [혁신기] 최근에는 4차 산업혁명의 핵심"
+      },
+      {
+        "rank": 4,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 4,
+        "score": 0.5144,
+        "passed_to_reranker": true,
+        "text_excerpt": "둘째, 지속적인 혁신(Continuous Innovation)입니다. 빠르게 변화하는 4차 산업혁명 시대에 발맞춰 신기술(AI, 빅데이터, XR 등)에 대한 R&D 투자를 아끼지 않으며, 기술 리더십을 굳건히 확보하고 있습니다. 셋째, 신뢰와 상생 파트너십(Trust & Partnership)입니다. 고객, 임직원, 글로벌 협력사와의 투명한 소통을 통해 장"
+      },
+      {
+        "rank": 5,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 6,
+        "score": 0.5111,
+        "passed_to_reranker": true,
+        "text_excerpt": "(1) 3DEXPERIENCE 플랫폼 (제품 수명주기 혁신)\n다쏘시스템의 3DEXPERIENCE 플랫폼은 사내외 모든 조직이 동일한 데이터를 기반으로 실시간 협업할 수 있는 강력한 환경을 제공합니다. 설계(CATIA), 엔지니어링 및 해석(SIMULIA), 프로젝트 및 데이터 관리(ENOVIA), 디지털 제조 및 생산 계획(DELMIA) 등 핵심 어플리케이"
+      },
+      {
+        "rank": 6,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 9,
+        "score": 0.511,
+        "passed_to_reranker": true,
+        "text_excerpt": "- [공공 및 교육/서비스] 정부 부처 및 지자체와 협력하여 지역 관광 명소나 역사적 유적지를 메타버스 공간에 재현하고, 대학 및 특성화 고등학교에 4차 산업 관련 실감형 실습 콘텐츠를 공급하여 차세대 인재 양성과 에듀테크(EduTech) 혁신을 이끌고 있습니다.\n\n10. 향후 비전 및 ESG 경영 실천 (Future Vision & ESG Manageme"
+      },
+      {
+        "rank": 7,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 2,
+        "score": 0.5055,
+        "passed_to_reranker": true,
+        "text_excerpt": "(1) 스마트 제조 솔루션 (Smart Manufacturing)\n- PLM(제품 수명주기 관리), CAD/CAM/CAE 솔루션 공급 및 컨설팅\n- Dassault Systèmes(다쏘시스템)의 3DEXPERIENCE 플랫폼 전문 파트너\n- MES(제조실행시스템), QMS(품질관리시스템) 구축을 통한 스마트 팩토리 구현\n\n(2) 디지털 트윈 및 XR (메타"
+      },
+      {
+        "rank": 8,
+        "collection": "ispark_company_profile",
+        "file": "이즈파크 회사 소개서.txt",
+        "chunk_index": 10,
+        "score": 0.4974,
+        "passed_to_reranker": true,
+        "text_excerpt": "당사가 제공하는 디지털 트윈과 3D 시뮬레이션 기술은 물리적인 시제품 제작(Prototyping) 횟수를 획기적으로 줄여주어 산업 현장의 폐기물 감소와 탄소 배출 절감에 직접적으로 기여하고 있습니다. 또한 임직원을 위한 일하기 좋은 환경 조성, 지역 사회와의 상생을 위한 꾸준한 사회 공헌 활동, 투명하고 윤리적인 경영 활동을 통해 사회적 책임을 다하는 존경"
+      },
+      {
+        "rank": 9,
+        "collection": "due_diligence_reason_codes",
+        "file": "실사유 코드.docx",
+        "chunk_index": 3,
+        "score": 0.2107,
+        "passed_to_reranker": false,
+        "text_excerpt": "폐업 도산 |\n| 2. 회사사정에 의 한 이직 | 경영상해고(23) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 23. 경영상 필요 및 회사불황으로 인원감축 등에 의한 퇴사(해고 권고사직 명예 퇴직 포함) |\n| 2. 회사사정에 의 한 이직 | 근로조건변동(24) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 26. 근로자의 귀책사유에 의한 징"
+      },
+      {
+        "rank": 10,
+        "collection": "credit_management_guide",
+        "file": "현명한 신용관리 요령.pdf",
+        "chunk_index": 12,
+        "score": 0.2092,
+        "passed_to_reranker": false,
+        "text_excerpt": "| 꿀팁 | ⑦ 타인을 위한 보증은 가급적 피하기\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n것은 가급적 피하는 것이 좋습니다.\n⑧ 대출 금융회사 신중하게 결정하기\n신용조회회사들은 신용등급 산정시 대부업체나 제"
+      },
+      {
+        "rank": 11,
+        "collection": "credit_management_guide",
+        "file": "현명한 신용관리 요령.pdf",
+        "chunk_index": 10,
+        "score": 0.2066,
+        "passed_to_reranker": false,
+        "text_excerpt": "⑦ 타인을 위한 보증은 가급적 피하기\n\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n\n것은 가급적 피하는 것이 좋습니다.\n\n⑧ 대출 금융회사 신중하게 결정하기\n\n신용조회회사들은 신용등급 산정시 대부업체나 제2"
+      },
+      {
+        "rank": 12,
+        "collection": "due_diligence_reason_codes",
+        "file": "실사유 코드.docx",
+        "chunk_index": 5,
+        "score": 0.2016,
+        "passed_to_reranker": false,
+        "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+      },
+      {
+        "rank": 13,
+        "collection": "credit_management_guide",
+        "file": "현명한 신용관리 요령.pdf",
+        "chunk_index": 13,
+        "score": 0.2015,
+        "passed_to_reranker": false,
+        "text_excerpt": "⑩ 신용관리체험단 활용하기\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n프로그램을 활용하면 도움을 받을 수 있습니다. |\n|---|---|"
+      },
+      {
+        "rank": 14,
+        "collection": "credit_management_guide",
+        "file": "현명한 신용관리 요령.pdf",
+        "chunk_index": 1,
+        "score": 0.1944,
+        "passed_to_reranker": false,
+        "text_excerpt": "제 목 : 금융꿀팁 200선 - ① 현명한 신용관리요령\n\n□ 금융감독원은 국민들이 일상적인 금융거래과정에서 알아두면\n\n유익한 실용금융정보(금융꿀팁) 200가지를 선정, 알기 쉽게 정리\n\n하여\n\n◦ 매주 1~3가지씩 보도참고자료를 통해 안내하고\n\n◦ 동시에 2016.9.1일 개설 예정인 금융소비자정보 포털사이트 “파인”\n\n(FINE)에도 게시할 방침임\n\n□ "
+      },
+      {
+        "rank": 15,
+        "collection": "credit_management_guide",
+        "file": "현명한 신용관리 요령.pdf",
+        "chunk_index": 9,
+        "score": 0.1914,
+        "passed_to_reranker": false,
+        "text_excerpt": "신용등급은 보통 신용\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n하는 것이 좋습니다. |\n|---|---|"
+      },
+      {
+        "rank": 16,
+        "collection": "credit_management_guide",
+        "file": "현명한 신용관리 요령.pdf",
+        "chunk_index": 11,
+        "score": 0.1803,
+        "passed_to_reranker": false,
+        "text_excerpt": "하면 신용등급 개선에 도움을 받을 수 있습니다.\n\n⑩ 신용관리체험단 활용하기\n\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n\n프로그램을 활용하면 도움을 받을 수 있습니다."
+      },
+      {
+        "rank": 17,
+        "collection": "credit_management_guide",
+        "file": "현명한 신용관리 요령.pdf",
+        "chunk_index": 7,
+        "score": 0.1758,
+        "passed_to_reranker": false,
+        "text_excerpt": "꾸준히 이용하는 것이 신용등급에 유리합니다. 신용등급은 보통 신용\n\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n\n하는 것이 좋습니다."
+      },
+      {
+        "rank": 18,
+        "collection": "due_diligence_reason_codes",
+        "file": "실사유 코드.docx",
+        "chunk_index": 6,
+        "score": 0.1727,
+        "passed_to_reranker": false,
+        "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+      },
+      {
+        "rank": 19,
+        "collection": "due_diligence_reason_codes",
+        "file": "실사유 코드.docx",
+        "chunk_index": 4,
+        "score": 0.172,
+        "passed_to_reranker": false,
+        "text_excerpt": "기타 | 고용보험 비적용(41) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |\n| 4. 기타 | 이중고용(42) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |"
+      },
+      {
+        "rank": 20,
+        "collection": "due_diligence_reason_codes",
+        "file": "실사유 코드.docx",
+        "chunk_index": 2,
+        "score": 0.1686,
+        "passed_to_reranker": false,
+        "text_excerpt": "| 대분류(4개) | 중분류 (변경 전: 14개) | 대분류(4개) | 중분류(변경 후: 8개) |\n|---|---|---|---|\n| 1. 개인사정에 의 한 이직 | 전직 자영업(11) | 1. 자진퇴사 | 11.개인사정으로 인한 자진퇴사 |\n| 1. 개인사정에 의 한 이직 | 결혼출산,\t거주지\t변경 등 가사사정(12) | 1. 자진퇴사 | 11.개인사정"
+      },
+      {
+        "rank": 21,
+        "collection": "due_diligence_reason_codes",
+        "file": "실사유 코드.docx",
+        "chunk_index": 8,
+        "score": 0.1589,
+        "passed_to_reranker": false,
+        "text_excerpt": "## 상실신고 및 이직확인서 처리 시 유의사항\n\n상실사유와 이직확인서의 일치: 4대보험 상실신고서에 기재하는 '상실사유'와 고용센터에 제출하는 '이직확인서' 상의 구체적 이직 사유는 반드시 일치해야 합니다. 코드가 상이할 경우 고용센터로부터 소명 요청을 받을 수 있습니다.\n\n허위 신고 시 과태료 부과: 근로자의 실업급여 수급을 도와주기 위해 자진퇴사(11번"
+      },
+      {
+        "rank": 22,
+        "collection": "credit_management_guide",
+        "file": "현명한 신용관리 요령.pdf",
+        "chunk_index": 3,
+        "score": 0.1401,
+        "passed_to_reranker": false,
+        "text_excerpt": "지기는 쉬워도 올리는 데는 긴 시간이 필요한 만큼 평소 자신의 신용\n\n꿀팁\n\n등급에 관심을 갖고 꾸준히 관리하는 것이 중요합니다.\n\n② 소액이라도 절대 연체하지 않기\n\n연체정보는 신용등급을 평가할 때 부정적인 영향을 미치는 가장\n\n중요한 요인입니다. 10만원 이상의 금액을 5영업일 이상 연체하면\n\n신용평점이나 신용등급이 하락하는 만큼, 좋은 신용등급을 받기"
+      },
+      {
+        "rank": 23,
+        "collection": "due_diligence_reason_codes",
+        "file": "실사유 코드.docx",
+        "chunk_index": 1,
+        "score": 0.1312,
+        "passed_to_reranker": false,
+        "text_excerpt": "실사유 분류 변경 내용(대분류․중분류)"
+      },
+      {
+        "rank": 24,
+        "collection": "due_diligence_reason_codes",
+        "file": "실사유 코드.docx",
+        "chunk_index": 9,
+        "score": 0.1235,
+        "passed_to_reranker": false,
+        "text_excerpt": "## 신고 기한 및 위반 시 제재 사항 (과태료 기준)\n\n상실신고 및 이직확인서 처리는 법정 기한이 엄격하게 정해져 있으며, 이를 위반하거나 거짓으로 신고할 경우 사업장에 과태료가 부과될 수 있으므로 인사 담당자의 각별한 주의가 필요합니다.\n\n## 법정 신고 기한\n\n피보험자격 상실신고서: 근로자가 퇴사한 날(상실일)이 속하는 달의 다음 달 15일까지 관할 "
+      }
+    ],
+    "multi_query_ms": 0,
+    "retrieval_ms": 2866.91,
+    "reranking_ms": 6722.73,
+    "gpt_ms": 2939.21,
+    "total_ms": 12530.26,
+    "client_total_ms": 12553.3,
+    "answer": "이즈파크는 2009년 창업한 4차산업혁명 핵심 ICT 솔루션 전문기업으로, 고객 맞춤 솔루션과 신기술 서비스를 통해 가치를 창출하고 산업 발전에 기여하는 회사입니다. 제조업 혁신을 돕는 3D CAD/CAM, PLM, 디지털 트윈, 3D 시뮬레이션 기술과 메타버스/XR 등 폭넓은 ICT 융합 솔루션을 제공하며, 글로벌 IT 선도 기업으로 성장하고 있습니다.",
+    "source": [
+      "이즈파크 회사 소개서.txt"
+    ],
+    "top_rerank_score": 0.999,
+    "auto_retrieval_stage": {
+      "available": true,
+      "k": 24,
+      "hit": null,
+      "best_rank": null,
+      "matched_keys": []
+    },
+    "auto_rerank_stage": {
+      "available": true,
+      "k": 3,
+      "hit": null,
+      "best_rank": null,
+      "matched_keys": []
+    },
+    "auto_items": {
+      "matched": null,
+      "total": null,
+      "missing": []
+    },
+    "auto_refused": null
+  },
+  "runs": [
+    {
+      "question_id": "H-01",
+      "type": "의미 기반 질문",
+      "run": 1,
+      "question": "직원이 회사 돈에 손을 대서 내보냈습니다. 어떤 사유 코드로 신고해야 하나요?",
+      "out_of_scope": false,
+      "selected_collections": "ALL(3) - Routing 미적용",
+      "retrieval_top_k": 8,
+      "retrieval_candidate_count": 24,
+      "rerank_candidate_count": 8,
+      "final_context_count": 3,
+      "multi_query_used": false,
+      "multi_queries": [],
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 5,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.5032,
+          "rerank_score": 0.0426,
+          "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+        },
+        {
+          "rank": 2,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 7,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.5166,
+          "rerank_score": 0.0231,
+          "text_excerpt": "[코드 23] 경영상 필요 및 인원 감축 등에 의한 퇴사\n\n적용 대상: 경영 악화, 부서 폐지, 직제 개편 등에 따른 희망퇴직, 명예퇴직, 권고사직 등.\n\n주의사항: 이 코드로 상실신고가 들어가면 회사는 향후 일정 기간 동안 고용유지지원금 등 각종 정부 지원금 혜택을 받는 데 제한이 생길 수 있습니다. 단순한 업무 부적응으로 인한 퇴사를 무분별하게 23번으"
+        },
+        {
+          "rank": 3,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 6,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.5081,
+          "rerank_score": 0.0137,
+          "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+        }
+      ],
+      "retrieval_candidates": [
+        {
+          "rank": 1,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 3,
+          "score": 0.5362,
+          "passed_to_reranker": true,
+          "text_excerpt": "폐업 도산 |\n| 2. 회사사정에 의 한 이직 | 경영상해고(23) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 23. 경영상 필요 및 회사불황으로 인원감축 등에 의한 퇴사(해고 권고사직 명예 퇴직 포함) |\n| 2. 회사사정에 의 한 이직 | 근로조건변동(24) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 26. 근로자의 귀책사유에 의한 징"
+        },
+        {
+          "rank": 2,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 7,
+          "score": 0.5166,
+          "passed_to_reranker": true,
+          "text_excerpt": "[코드 23] 경영상 필요 및 인원 감축 등에 의한 퇴사\n\n적용 대상: 경영 악화, 부서 폐지, 직제 개편 등에 따른 희망퇴직, 명예퇴직, 권고사직 등.\n\n주의사항: 이 코드로 상실신고가 들어가면 회사는 향후 일정 기간 동안 고용유지지원금 등 각종 정부 지원금 혜택을 받는 데 제한이 생길 수 있습니다. 단순한 업무 부적응으로 인한 퇴사를 무분별하게 23번으"
+        },
+        {
+          "rank": 3,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 6,
+          "score": 0.5081,
+          "passed_to_reranker": true,
+          "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+        },
+        {
+          "rank": 4,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 8,
+          "score": 0.5073,
+          "passed_to_reranker": true,
+          "text_excerpt": "## 상실신고 및 이직확인서 처리 시 유의사항\n\n상실사유와 이직확인서의 일치: 4대보험 상실신고서에 기재하는 '상실사유'와 고용센터에 제출하는 '이직확인서' 상의 구체적 이직 사유는 반드시 일치해야 합니다. 코드가 상이할 경우 고용센터로부터 소명 요청을 받을 수 있습니다.\n\n허위 신고 시 과태료 부과: 근로자의 실업급여 수급을 도와주기 위해 자진퇴사(11번"
+        },
+        {
+          "rank": 5,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 5,
+          "score": 0.5032,
+          "passed_to_reranker": true,
+          "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+        },
+        {
+          "rank": 6,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 2,
+          "score": 0.4904,
+          "passed_to_reranker": true,
+          "text_excerpt": "| 대분류(4개) | 중분류 (변경 전: 14개) | 대분류(4개) | 중분류(변경 후: 8개) |\n|---|---|---|---|\n| 1. 개인사정에 의 한 이직 | 전직 자영업(11) | 1. 자진퇴사 | 11.개인사정으로 인한 자진퇴사 |\n| 1. 개인사정에 의 한 이직 | 결혼출산,\t거주지\t변경 등 가사사정(12) | 1. 자진퇴사 | 11.개인사정"
+        },
+        {
+          "rank": 7,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 9,
+          "score": 0.4791,
+          "passed_to_reranker": true,
+          "text_excerpt": "## 신고 기한 및 위반 시 제재 사항 (과태료 기준)\n\n상실신고 및 이직확인서 처리는 법정 기한이 엄격하게 정해져 있으며, 이를 위반하거나 거짓으로 신고할 경우 사업장에 과태료가 부과될 수 있으므로 인사 담당자의 각별한 주의가 필요합니다.\n\n## 법정 신고 기한\n\n피보험자격 상실신고서: 근로자가 퇴사한 날(상실일)이 속하는 달의 다음 달 15일까지 관할 "
+        },
+        {
+          "rank": 8,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 1,
+          "score": 0.4176,
+          "passed_to_reranker": true,
+          "text_excerpt": "제 목 : 금융꿀팁 200선 - ① 현명한 신용관리요령\n\n□ 금융감독원은 국민들이 일상적인 금융거래과정에서 알아두면\n\n유익한 실용금융정보(금융꿀팁) 200가지를 선정, 알기 쉽게 정리\n\n하여\n\n◦ 매주 1~3가지씩 보도참고자료를 통해 안내하고\n\n◦ 동시에 2016.9.1일 개설 예정인 금융소비자정보 포털사이트 “파인”\n\n(FINE)에도 게시할 방침임\n\n□ "
+        },
+        {
+          "rank": 9,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 4,
+          "score": 0.4164,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 제목 | ‘현명한 신용관리요령’ |\n|---|---|\n| 사례 | ● 사회초년생 이○○(28세)씨는 3개의 신용카드를 사용하고 있었는데,\n결제일자를 제대로 확인하지 않아 연체가 발생하였고, 이로 인해\n신용등급이 7등급으로 하락하였다. 결혼준비를 하면서 부족한 보증금을\n마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n거절당하였다. 이때서야 신용"
+        },
+        {
+          "rank": 10,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 12,
+          "score": 0.4163,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 꿀팁 | ⑦ 타인을 위한 보증은 가급적 피하기\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n것은 가급적 피하는 것이 좋습니다.\n⑧ 대출 금융회사 신중하게 결정하기\n신용조회회사들은 신용등급 산정시 대부업체나 제"
+        },
+        {
+          "rank": 11,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 10,
+          "score": 0.414,
+          "passed_to_reranker": false,
+          "text_excerpt": "⑦ 타인을 위한 보증은 가급적 피하기\n\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n\n것은 가급적 피하는 것이 좋습니다.\n\n⑧ 대출 금융회사 신중하게 결정하기\n\n신용조회회사들은 신용등급 산정시 대부업체나 제2"
+        },
+        {
+          "rank": 12,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 2,
+          "score": 0.4014,
+          "passed_to_reranker": false,
+          "text_excerpt": "마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n\n거절당하였다. 이때서야 신용등급의 중요성을 인식하고 평소 신용\n\n관리를 소홀히 한 것을 후회하였다.\n\n사례\n\n● 직장인 김○○(38세)씨는 할부로 자동차를 구입하였는데, 신용관리의\n\n중요성을 인식하지 못하고 할부금을 연체하여 신용등급이 5등급\n\n으로 하락하였다. 전세금 마련을 위해 은행으로부터 5"
+        },
+        {
+          "rank": 13,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 5,
+          "score": 0.3369,
+          "passed_to_reranker": false,
+          "text_excerpt": "‘현명한 신용관리 요령'을 실천해 보세요!\n① 평소 자기 신용등급에 관심 기울이기\n신용등급은 금융거래에 있어 신분증과도 같습니다. 대출 가능여부는\n물론 대출한도, 대출금리를 결정하는 기본지표가 되기 때문입니다. 떨어\n지기는 쉬워도 올리는 데는 긴 시간이 필요한 만큼 평소 자신의 신용\n등급에 관심을 갖고 꾸준히 관리하는 것이 중요합니다.\n② 소액이라도 절대 "
+        },
+        {
+          "rank": 14,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 9,
+          "score": 0.3339,
+          "passed_to_reranker": false,
+          "text_excerpt": "신용등급은 보통 신용\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n하는 것이 좋습니다. |\n|---|---|"
+        },
+        {
+          "rank": 15,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 3,
+          "score": 0.3223,
+          "passed_to_reranker": false,
+          "text_excerpt": "지기는 쉬워도 올리는 데는 긴 시간이 필요한 만큼 평소 자신의 신용\n\n꿀팁\n\n등급에 관심을 갖고 꾸준히 관리하는 것이 중요합니다.\n\n② 소액이라도 절대 연체하지 않기\n\n연체정보는 신용등급을 평가할 때 부정적인 영향을 미치는 가장\n\n중요한 요인입니다. 10만원 이상의 금액을 5영업일 이상 연체하면\n\n신용평점이나 신용등급이 하락하는 만큼, 좋은 신용등급을 받기"
+        },
+        {
+          "rank": 16,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 4,
+          "score": 0.3065,
+          "passed_to_reranker": false,
+          "text_excerpt": "기타 | 고용보험 비적용(41) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |\n| 4. 기타 | 이중고용(42) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |"
+        },
+        {
+          "rank": 17,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 10,
+          "score": 0.2703,
+          "passed_to_reranker": false,
+          "text_excerpt": "당사가 제공하는 디지털 트윈과 3D 시뮬레이션 기술은 물리적인 시제품 제작(Prototyping) 횟수를 획기적으로 줄여주어 산업 현장의 폐기물 감소와 탄소 배출 절감에 직접적으로 기여하고 있습니다. 또한 임직원을 위한 일하기 좋은 환경 조성, 지역 사회와의 상생을 위한 꾸준한 사회 공헌 활동, 투명하고 윤리적인 경영 활동을 통해 사회적 책임을 다하는 존경"
+        },
+        {
+          "rank": 18,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 3,
+          "score": 0.248,
+          "passed_to_reranker": false,
+          "text_excerpt": "핵심 경쟁력\n- 풍부한 산업별(항공, 자동차, 하이테크, 소비재 등) 구축 경험과 노하우\n- 검증된 글로벌 솔루션(다쏘시스템 등)과 자체 개발 솔루션의 융합\n- 전문 엔지니어 및 개발 인력을 통한 체계적인 기술 지원 및 유지보수\n\n5. 오시는 길 및 연락처\n- 본사: 서울특별시 금천구 가산디지털2로 43-14 한화비즈메트로2차 803~820호\n- R&D 센"
+        },
+        {
+          "rank": 19,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 1,
+          "score": 0.237,
+          "passed_to_reranker": false,
+          "text_excerpt": "[이즈파크 회사 소개서]\n\n[ Infinite Solution Park - 해법을 향한 무한한 공간, 이즈파크 ]\n\n1. CEO 인사말\n이즈파크는 2009년 창업 이래, 4차산업혁명 핵심 ICT 솔루션 전문기업으로서 고객의 니즈에 맞는 솔루션과 새로운 기술 서비스를 통해 가치를 창출하고 산업발전에 기여하기 위한 최선의 노력을 다하고 있습니다.\n급변하는 IT"
+        },
+        {
+          "rank": 20,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 4,
+          "score": 0.2101,
+          "passed_to_reranker": false,
+          "text_excerpt": "둘째, 지속적인 혁신(Continuous Innovation)입니다. 빠르게 변화하는 4차 산업혁명 시대에 발맞춰 신기술(AI, 빅데이터, XR 등)에 대한 R&D 투자를 아끼지 않으며, 기술 리더십을 굳건히 확보하고 있습니다. 셋째, 신뢰와 상생 파트너십(Trust & Partnership)입니다. 고객, 임직원, 글로벌 협력사와의 투명한 소통을 통해 장"
+        },
+        {
+          "rank": 21,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 8,
+          "score": 0.2028,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [항공/우주 및 방위 산업] 수만 개의 부품으로 이루어진 고도의 정밀성이 요구되는 항공기 제조사를 위해, 복잡한 대형 어셈블리(Assembly) 관리와 안전성 확보를 위한 경량화 설계를 완벽히 지원하는 고도화된 PLM 시스템을 성공적으로 구축했습니다.\n- [자동차 및 모빌리티 산업] 전기차 및 자율주행 시대를 맞이하여 빠르게 변화하는 모빌리티 트렌드에 "
+        },
+        {
+          "rank": 22,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 7,
+          "score": 0.201,
+          "passed_to_reranker": false,
+          "text_excerpt": "이러한 기술력은 제조 현장을 넘어 공공기관의 재난 대피 훈련, 교육기관의 실감형 학습, 문화/관광 분야의 가상 투어 플랫폼 등 산업 전반으로 폭넓게 확산 적용되고 있습니다.\n\n(3) AI 기반 스마트 예지보전 및 빅데이터 최적화\n공장 내 수많은 설비에서 발생하는 방대한 센서 데이터(IoT)를 실시간으로 수집하고, 독자적인 AI 머신러닝 알고리즘으로 분석하여"
+        },
+        {
+          "rank": 23,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 9,
+          "score": 0.1919,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [공공 및 교육/서비스] 정부 부처 및 지자체와 협력하여 지역 관광 명소나 역사적 유적지를 메타버스 공간에 재현하고, 대학 및 특성화 고등학교에 4차 산업 관련 실감형 실습 콘텐츠를 공급하여 차세대 인재 양성과 에듀테크(EduTech) 혁신을 이끌고 있습니다.\n\n10. 향후 비전 및 ESG 경영 실천 (Future Vision & ESG Manageme"
+        },
+        {
+          "rank": 24,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 5,
+          "score": 0.1819,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [성장기] 2010년대 후반부터는 스마트 팩토리(Smart Factory) 구축 사업으로 비즈니스 영역을 대폭 확장하였습니다. MES, QMS 등 제조 실행 및 품질 관리 시스템을 고도화하며, 항공우주, 자동차 부품, 하이테크, 산업 기계 등 다양한 핵심 산업군에 성공적인 시스템 구축 레퍼런스를 확보했습니다.\n- [혁신기] 최근에는 4차 산업혁명의 핵심"
+        }
+      ],
+      "multi_query_ms": 0,
+      "retrieval_ms": 1263.64,
+      "reranking_ms": 8679.13,
+      "gpt_ms": 2452.81,
+      "total_ms": 12396.05,
+      "client_total_ms": 12400.41,
+      "answer": "직원이 회사 돈에 손을 대어 내보낸 경우는 [코드 26] 근로자 귀책사유에 의한 징계해고·권고사직으로 신고해야 합니다. 이 코드는 근로자의 중대한 귀책사유(공금 횡령 등)로 인해 징계해고를 당하거나 권고사직 형태로 퇴사하는 경우에 적용됩니다. 실업급여 수급이 제한될 수 있으며, 적법한 징계위원회 기록이 있어야 안전합니다.",
+      "source": [
+        "실사유 코드.docx"
+      ],
+      "top_rerank_score": 0.0426,
+      "auto_retrieval_stage": {
+        "available": true,
+        "k": 24,
+        "hit": true,
+        "best_rank": 2,
+        "matched_keys": [
+          {
+            "rank": 2,
+            "collection": "due_diligence_reason_codes",
+            "chunk_index": 7
+          }
+        ]
+      },
+      "auto_rerank_stage": {
+        "available": true,
+        "k": 3,
+        "hit": true,
+        "best_rank": 2,
+        "matched_keys": [
+          {
+            "rank": 2,
+            "collection": "due_diligence_reason_codes",
+            "chunk_index": 7
+          }
+        ]
+      },
+      "auto_items": {
+        "matched": 1,
+        "total": 1,
+        "missing": []
+      },
+      "auto_refused": null
+    },
+    {
+      "question_id": "H-02",
+      "type": "정확한 키워드/코드형",
+      "run": 1,
+      "question": "26번 코드와 23번 코드는 어떻게 다른가요?",
+      "out_of_scope": false,
+      "selected_collections": "ALL(3) - Routing 미적용",
+      "retrieval_top_k": 8,
+      "retrieval_candidate_count": 26,
+      "rerank_candidate_count": 8,
+      "final_context_count": 3,
+      "multi_query_used": true,
+      "multi_queries": [
+        "26번 코드와 23번 코드의 차이점은 무엇인가요?",
+        "26번 코드와 23번 코드는 어떤 점에서 다릅니까?",
+        "26번 코드와 23번 코드를 비교하면 어떤 차이가 있나요?"
+      ],
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 7,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.3398,
+          "rerank_score": 0.9931,
+          "text_excerpt": "[코드 23] 경영상 필요 및 인원 감축 등에 의한 퇴사\n\n적용 대상: 경영 악화, 부서 폐지, 직제 개편 등에 따른 희망퇴직, 명예퇴직, 권고사직 등.\n\n주의사항: 이 코드로 상실신고가 들어가면 회사는 향후 일정 기간 동안 고용유지지원금 등 각종 정부 지원금 혜택을 받는 데 제한이 생길 수 있습니다. 단순한 업무 부적응으로 인한 퇴사를 무분별하게 23번으"
+        },
+        {
+          "rank": 2,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 6,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.3302,
+          "rerank_score": 0.0843,
+          "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+        },
+        {
+          "rank": 3,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 3,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.3359,
+          "rerank_score": 0.0254,
+          "text_excerpt": "폐업 도산 |\n| 2. 회사사정에 의 한 이직 | 경영상해고(23) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 23. 경영상 필요 및 회사불황으로 인원감축 등에 의한 퇴사(해고 권고사직 명예 퇴직 포함) |\n| 2. 회사사정에 의 한 이직 | 근로조건변동(24) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 26. 근로자의 귀책사유에 의한 징"
+        }
+      ],
+      "retrieval_candidates": [
+        {
+          "rank": 1,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 1,
+          "score": 0.4441,
+          "passed_to_reranker": true,
+          "text_excerpt": "실사유 분류 변경 내용(대분류․중분류)"
+        },
+        {
+          "rank": 2,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 5,
+          "score": 0.4314,
+          "passed_to_reranker": true,
+          "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+        },
+        {
+          "rank": 3,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 4,
+          "score": 0.3885,
+          "passed_to_reranker": true,
+          "text_excerpt": "기타 | 고용보험 비적용(41) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |\n| 4. 기타 | 이중고용(42) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |"
+        },
+        {
+          "rank": 4,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 2,
+          "score": 0.3862,
+          "passed_to_reranker": true,
+          "text_excerpt": "| 대분류(4개) | 중분류 (변경 전: 14개) | 대분류(4개) | 중분류(변경 후: 8개) |\n|---|---|---|---|\n| 1. 개인사정에 의 한 이직 | 전직 자영업(11) | 1. 자진퇴사 | 11.개인사정으로 인한 자진퇴사 |\n| 1. 개인사정에 의 한 이직 | 결혼출산,\t거주지\t변경 등 가사사정(12) | 1. 자진퇴사 | 11.개인사정"
+        },
+        {
+          "rank": 5,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 7,
+          "score": 0.3398,
+          "passed_to_reranker": true,
+          "text_excerpt": "[코드 23] 경영상 필요 및 인원 감축 등에 의한 퇴사\n\n적용 대상: 경영 악화, 부서 폐지, 직제 개편 등에 따른 희망퇴직, 명예퇴직, 권고사직 등.\n\n주의사항: 이 코드로 상실신고가 들어가면 회사는 향후 일정 기간 동안 고용유지지원금 등 각종 정부 지원금 혜택을 받는 데 제한이 생길 수 있습니다. 단순한 업무 부적응으로 인한 퇴사를 무분별하게 23번으"
+        },
+        {
+          "rank": 6,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 3,
+          "score": 0.3359,
+          "passed_to_reranker": true,
+          "text_excerpt": "폐업 도산 |\n| 2. 회사사정에 의 한 이직 | 경영상해고(23) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 23. 경영상 필요 및 회사불황으로 인원감축 등에 의한 퇴사(해고 권고사직 명예 퇴직 포함) |\n| 2. 회사사정에 의 한 이직 | 근로조건변동(24) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 26. 근로자의 귀책사유에 의한 징"
+        },
+        {
+          "rank": 7,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 6,
+          "score": 0.3302,
+          "passed_to_reranker": true,
+          "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+        },
+        {
+          "rank": 8,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 7,
+          "score": 0.2904,
+          "passed_to_reranker": true,
+          "text_excerpt": "꾸준히 이용하는 것이 신용등급에 유리합니다. 신용등급은 보통 신용\n\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n\n하는 것이 좋습니다."
+        },
+        {
+          "rank": 9,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 9,
+          "score": 0.2838,
+          "passed_to_reranker": false,
+          "text_excerpt": "신용등급은 보통 신용\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n하는 것이 좋습니다. |\n|---|---|"
+        },
+        {
+          "rank": 10,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 8,
+          "score": 0.2805,
+          "passed_to_reranker": false,
+          "text_excerpt": "## 상실신고 및 이직확인서 처리 시 유의사항\n\n상실사유와 이직확인서의 일치: 4대보험 상실신고서에 기재하는 '상실사유'와 고용센터에 제출하는 '이직확인서' 상의 구체적 이직 사유는 반드시 일치해야 합니다. 코드가 상이할 경우 고용센터로부터 소명 요청을 받을 수 있습니다.\n\n허위 신고 시 과태료 부과: 근로자의 실업급여 수급을 도와주기 위해 자진퇴사(11번"
+        },
+        {
+          "rank": 11,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 6,
+          "score": 0.2764,
+          "passed_to_reranker": false,
+          "text_excerpt": "③ 신용카드 보다는 체크카드 사용하기\n\n신용등급에 결정적인 영향을 미치는 연체를 피하는 첫 걸음은\n\n자신의 상환능력을 벗어난 카드사용을 자제하는 것입니다. 그리고\n\n이를 실천하기 위한 안전판이 신용카드 보다는 체크카드를 사용하는\n\n것입니다.\n\n④ 연체는 오래된 것부터 상환하기\n\n불가피하게 연체가 발생할 경우 가장 오래된 연체 건부터 상환\n\n해야 연체로 인한"
+        },
+        {
+          "rank": 12,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 8,
+          "score": 0.2743,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 꿀팁 | ③ 신용카드 보다는 체크카드 사용하기\n신용등급에 결정적인 영향을 미치는 연체를 피하는 첫 걸음은\n자신의 상환능력을 벗어난 카드사용을 자제하는 것입니다. 그리고\n이를 실천하기 위한 안전판이 신용카드 보다는 체크카드를 사용하는\n것입니다.\n④ 연체는 오래된 것부터 상환하기\n불가피하게 연체가 발생할 경우 가장 오래된 연체 건부터 상환\n해야 연체로 인한"
+        },
+        {
+          "rank": 13,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 12,
+          "score": 0.2722,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 꿀팁 | ⑦ 타인을 위한 보증은 가급적 피하기\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n것은 가급적 피하는 것이 좋습니다.\n⑧ 대출 금융회사 신중하게 결정하기\n신용조회회사들은 신용등급 산정시 대부업체나 제"
+        },
+        {
+          "rank": 14,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 10,
+          "score": 0.2704,
+          "passed_to_reranker": false,
+          "text_excerpt": "⑦ 타인을 위한 보증은 가급적 피하기\n\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n\n것은 가급적 피하는 것이 좋습니다.\n\n⑧ 대출 금융회사 신중하게 결정하기\n\n신용조회회사들은 신용등급 산정시 대부업체나 제2"
+        },
+        {
+          "rank": 15,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 11,
+          "score": 0.2687,
+          "passed_to_reranker": false,
+          "text_excerpt": "하면 신용등급 개선에 도움을 받을 수 있습니다.\n\n⑩ 신용관리체험단 활용하기\n\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n\n프로그램을 활용하면 도움을 받을 수 있습니다."
+        },
+        {
+          "rank": 16,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 4,
+          "score": 0.2609,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 제목 | ‘현명한 신용관리요령’ |\n|---|---|\n| 사례 | ● 사회초년생 이○○(28세)씨는 3개의 신용카드를 사용하고 있었는데,\n결제일자를 제대로 확인하지 않아 연체가 발생하였고, 이로 인해\n신용등급이 7등급으로 하락하였다. 결혼준비를 하면서 부족한 보증금을\n마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n거절당하였다. 이때서야 신용"
+        },
+        {
+          "rank": 17,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 13,
+          "score": 0.2374,
+          "passed_to_reranker": false,
+          "text_excerpt": "⑩ 신용관리체험단 활용하기\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n프로그램을 활용하면 도움을 받을 수 있습니다. |\n|---|---|"
+        },
+        {
+          "rank": 18,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 9,
+          "score": 0.1615,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [공공 및 교육/서비스] 정부 부처 및 지자체와 협력하여 지역 관광 명소나 역사적 유적지를 메타버스 공간에 재현하고, 대학 및 특성화 고등학교에 4차 산업 관련 실감형 실습 콘텐츠를 공급하여 차세대 인재 양성과 에듀테크(EduTech) 혁신을 이끌고 있습니다.\n\n10. 향후 비전 및 ESG 경영 실천 (Future Vision & ESG Manageme"
+        },
+        {
+          "rank": 19,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 1,
+          "score": 0.1546,
+          "passed_to_reranker": false,
+          "text_excerpt": "[이즈파크 회사 소개서]\n\n[ Infinite Solution Park - 해법을 향한 무한한 공간, 이즈파크 ]\n\n1. CEO 인사말\n이즈파크는 2009년 창업 이래, 4차산업혁명 핵심 ICT 솔루션 전문기업으로서 고객의 니즈에 맞는 솔루션과 새로운 기술 서비스를 통해 가치를 창출하고 산업발전에 기여하기 위한 최선의 노력을 다하고 있습니다.\n급변하는 IT"
+        },
+        {
+          "rank": 20,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 3,
+          "score": 0.1541,
+          "passed_to_reranker": false,
+          "text_excerpt": "핵심 경쟁력\n- 풍부한 산업별(항공, 자동차, 하이테크, 소비재 등) 구축 경험과 노하우\n- 검증된 글로벌 솔루션(다쏘시스템 등)과 자체 개발 솔루션의 융합\n- 전문 엔지니어 및 개발 인력을 통한 체계적인 기술 지원 및 유지보수\n\n5. 오시는 길 및 연락처\n- 본사: 서울특별시 금천구 가산디지털2로 43-14 한화비즈메트로2차 803~820호\n- R&D 센"
+        },
+        {
+          "rank": 21,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 7,
+          "score": 0.1515,
+          "passed_to_reranker": false,
+          "text_excerpt": "이러한 기술력은 제조 현장을 넘어 공공기관의 재난 대피 훈련, 교육기관의 실감형 학습, 문화/관광 분야의 가상 투어 플랫폼 등 산업 전반으로 폭넓게 확산 적용되고 있습니다.\n\n(3) AI 기반 스마트 예지보전 및 빅데이터 최적화\n공장 내 수많은 설비에서 발생하는 방대한 센서 데이터(IoT)를 실시간으로 수집하고, 독자적인 AI 머신러닝 알고리즘으로 분석하여"
+        },
+        {
+          "rank": 22,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 10,
+          "score": 0.1496,
+          "passed_to_reranker": false,
+          "text_excerpt": "당사가 제공하는 디지털 트윈과 3D 시뮬레이션 기술은 물리적인 시제품 제작(Prototyping) 횟수를 획기적으로 줄여주어 산업 현장의 폐기물 감소와 탄소 배출 절감에 직접적으로 기여하고 있습니다. 또한 임직원을 위한 일하기 좋은 환경 조성, 지역 사회와의 상생을 위한 꾸준한 사회 공헌 활동, 투명하고 윤리적인 경영 활동을 통해 사회적 책임을 다하는 존경"
+        },
+        {
+          "rank": 23,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 2,
+          "score": 0.1494,
+          "passed_to_reranker": false,
+          "text_excerpt": "(1) 스마트 제조 솔루션 (Smart Manufacturing)\n- PLM(제품 수명주기 관리), CAD/CAM/CAE 솔루션 공급 및 컨설팅\n- Dassault Systèmes(다쏘시스템)의 3DEXPERIENCE 플랫폼 전문 파트너\n- MES(제조실행시스템), QMS(품질관리시스템) 구축을 통한 스마트 팩토리 구현\n\n(2) 디지털 트윈 및 XR (메타"
+        },
+        {
+          "rank": 24,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 8,
+          "score": 0.1421,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [항공/우주 및 방위 산업] 수만 개의 부품으로 이루어진 고도의 정밀성이 요구되는 항공기 제조사를 위해, 복잡한 대형 어셈블리(Assembly) 관리와 안전성 확보를 위한 경량화 설계를 완벽히 지원하는 고도화된 PLM 시스템을 성공적으로 구축했습니다.\n- [자동차 및 모빌리티 산업] 전기차 및 자율주행 시대를 맞이하여 빠르게 변화하는 모빌리티 트렌드에 "
+        },
+        {
+          "rank": 25,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 6,
+          "score": 0.1409,
+          "passed_to_reranker": false,
+          "text_excerpt": "(1) 3DEXPERIENCE 플랫폼 (제품 수명주기 혁신)\n다쏘시스템의 3DEXPERIENCE 플랫폼은 사내외 모든 조직이 동일한 데이터를 기반으로 실시간 협업할 수 있는 강력한 환경을 제공합니다. 설계(CATIA), 엔지니어링 및 해석(SIMULIA), 프로젝트 및 데이터 관리(ENOVIA), 디지털 제조 및 생산 계획(DELMIA) 등 핵심 어플리케이"
+        },
+        {
+          "rank": 26,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 5,
+          "score": 0.1408,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [성장기] 2010년대 후반부터는 스마트 팩토리(Smart Factory) 구축 사업으로 비즈니스 영역을 대폭 확장하였습니다. MES, QMS 등 제조 실행 및 품질 관리 시스템을 고도화하며, 항공우주, 자동차 부품, 하이테크, 산업 기계 등 다양한 핵심 산업군에 성공적인 시스템 구축 레퍼런스를 확보했습니다.\n- [혁신기] 최근에는 4차 산업혁명의 핵심"
+        }
+      ],
+      "multi_query_ms": 1511.76,
+      "retrieval_ms": 2324.83,
+      "reranking_ms": 8634.5,
+      "gpt_ms": 2596.31,
+      "total_ms": 15068.18,
+      "client_total_ms": 15092.37,
+      "answer": "26번 코드는 근로자의 중대한 귀책사유(공금 횡령, 장기 무단결근, 기밀 누설 등)로 인한 징계해고 또는 권고사직에 해당하며, 실업급여 수급이 제한될 수 있습니다. 반면 23번 코드는 경영상 필요, 회사 불황, 인원 감축 등 회사 사정에 의한 퇴사(희망퇴직, 명예퇴직, 권고사직 포함)로, 회사가 정부 지원금 혜택을 받는 데 제한이 생길 수 있으나 근로자 귀책사유는 없습니다. 즉, 26번은 근로자 귀책사유에 의한 퇴사이고 23번은 회사 사정에 의한 퇴사입니다.",
+      "source": [
+        "실사유 코드.docx"
+      ],
+      "top_rerank_score": 0.9931,
+      "auto_retrieval_stage": {
+        "available": true,
+        "k": 26,
+        "hit": true,
+        "best_rank": 5,
+        "matched_keys": [
+          {
+            "rank": 5,
+            "collection": "due_diligence_reason_codes",
+            "chunk_index": 7
+          }
+        ]
+      },
+      "auto_rerank_stage": {
+        "available": true,
+        "k": 3,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "due_diligence_reason_codes",
+            "chunk_index": 7
+          }
+        ]
+      },
+      "auto_items": {
+        "matched": 2,
+        "total": 2,
+        "missing": []
+      },
+      "auto_refused": null
+    },
+    {
+      "question_id": "H-03",
+      "type": "정확한 키워드/코드형",
+      "run": 1,
+      "question": "사업장 이전으로 출퇴근이 왕복 몇 시간 이상 걸리게 되면 자진퇴사해도 실업급여를 받을 수 있나요?",
+      "out_of_scope": false,
+      "selected_collections": "ALL(3) - Routing 미적용",
+      "retrieval_top_k": 8,
+      "retrieval_candidate_count": 25,
+      "rerank_candidate_count": 8,
+      "final_context_count": 3,
+      "multi_query_used": true,
+      "multi_queries": [
+        "사업장 이전으로 출퇴근 시간이 왕복 몇 시간 이상일 때 자진퇴사해도 실업급여를 받을 수 있나요?",
+        "사업장 이전으로 인해 출퇴근 시간이 왕복 몇 시간 이상 걸리면 자발적 퇴사 시 실업급여 수급이 가능한가요?",
+        "출퇴근 시간이 사업장 이전으로 왕복 몇 시간 이상 늘어나면 자진퇴사해도 실업급여를 받을 수 있나요?"
+      ],
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 6,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.5776,
+          "rerank_score": 0.9993,
+          "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+        },
+        {
+          "rank": 2,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 5,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.412,
+          "rerank_score": 0.0167,
+          "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+        },
+        {
+          "rank": 3,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 7,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.4875,
+          "rerank_score": 0.014,
+          "text_excerpt": "[코드 23] 경영상 필요 및 인원 감축 등에 의한 퇴사\n\n적용 대상: 경영 악화, 부서 폐지, 직제 개편 등에 따른 희망퇴직, 명예퇴직, 권고사직 등.\n\n주의사항: 이 코드로 상실신고가 들어가면 회사는 향후 일정 기간 동안 고용유지지원금 등 각종 정부 지원금 혜택을 받는 데 제한이 생길 수 있습니다. 단순한 업무 부적응으로 인한 퇴사를 무분별하게 23번으"
+        }
+      ],
+      "retrieval_candidates": [
+        {
+          "rank": 1,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 6,
+          "score": 0.5776,
+          "passed_to_reranker": true,
+          "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+        },
+        {
+          "rank": 2,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 7,
+          "score": 0.4875,
+          "passed_to_reranker": true,
+          "text_excerpt": "[코드 23] 경영상 필요 및 인원 감축 등에 의한 퇴사\n\n적용 대상: 경영 악화, 부서 폐지, 직제 개편 등에 따른 희망퇴직, 명예퇴직, 권고사직 등.\n\n주의사항: 이 코드로 상실신고가 들어가면 회사는 향후 일정 기간 동안 고용유지지원금 등 각종 정부 지원금 혜택을 받는 데 제한이 생길 수 있습니다. 단순한 업무 부적응으로 인한 퇴사를 무분별하게 23번으"
+        },
+        {
+          "rank": 3,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 3,
+          "score": 0.452,
+          "passed_to_reranker": true,
+          "text_excerpt": "폐업 도산 |\n| 2. 회사사정에 의 한 이직 | 경영상해고(23) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 23. 경영상 필요 및 회사불황으로 인원감축 등에 의한 퇴사(해고 권고사직 명예 퇴직 포함) |\n| 2. 회사사정에 의 한 이직 | 근로조건변동(24) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 26. 근로자의 귀책사유에 의한 징"
+        },
+        {
+          "rank": 4,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 2,
+          "score": 0.4364,
+          "passed_to_reranker": true,
+          "text_excerpt": "| 대분류(4개) | 중분류 (변경 전: 14개) | 대분류(4개) | 중분류(변경 후: 8개) |\n|---|---|---|---|\n| 1. 개인사정에 의 한 이직 | 전직 자영업(11) | 1. 자진퇴사 | 11.개인사정으로 인한 자진퇴사 |\n| 1. 개인사정에 의 한 이직 | 결혼출산,\t거주지\t변경 등 가사사정(12) | 1. 자진퇴사 | 11.개인사정"
+        },
+        {
+          "rank": 5,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 9,
+          "score": 0.4261,
+          "passed_to_reranker": true,
+          "text_excerpt": "## 신고 기한 및 위반 시 제재 사항 (과태료 기준)\n\n상실신고 및 이직확인서 처리는 법정 기한이 엄격하게 정해져 있으며, 이를 위반하거나 거짓으로 신고할 경우 사업장에 과태료가 부과될 수 있으므로 인사 담당자의 각별한 주의가 필요합니다.\n\n## 법정 신고 기한\n\n피보험자격 상실신고서: 근로자가 퇴사한 날(상실일)이 속하는 달의 다음 달 15일까지 관할 "
+        },
+        {
+          "rank": 6,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 5,
+          "score": 0.412,
+          "passed_to_reranker": true,
+          "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+        },
+        {
+          "rank": 7,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 8,
+          "score": 0.3772,
+          "passed_to_reranker": true,
+          "text_excerpt": "## 상실신고 및 이직확인서 처리 시 유의사항\n\n상실사유와 이직확인서의 일치: 4대보험 상실신고서에 기재하는 '상실사유'와 고용센터에 제출하는 '이직확인서' 상의 구체적 이직 사유는 반드시 일치해야 합니다. 코드가 상이할 경우 고용센터로부터 소명 요청을 받을 수 있습니다.\n\n허위 신고 시 과태료 부과: 근로자의 실업급여 수급을 도와주기 위해 자진퇴사(11번"
+        },
+        {
+          "rank": 8,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 2,
+          "score": 0.3496,
+          "passed_to_reranker": true,
+          "text_excerpt": "마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n\n거절당하였다. 이때서야 신용등급의 중요성을 인식하고 평소 신용\n\n관리를 소홀히 한 것을 후회하였다.\n\n사례\n\n● 직장인 김○○(38세)씨는 할부로 자동차를 구입하였는데, 신용관리의\n\n중요성을 인식하지 못하고 할부금을 연체하여 신용등급이 5등급\n\n으로 하락하였다. 전세금 마련을 위해 은행으로부터 5"
+        },
+        {
+          "rank": 9,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 5,
+          "score": 0.3076,
+          "passed_to_reranker": false,
+          "text_excerpt": "‘현명한 신용관리 요령'을 실천해 보세요!\n① 평소 자기 신용등급에 관심 기울이기\n신용등급은 금융거래에 있어 신분증과도 같습니다. 대출 가능여부는\n물론 대출한도, 대출금리를 결정하는 기본지표가 되기 때문입니다. 떨어\n지기는 쉬워도 올리는 데는 긴 시간이 필요한 만큼 평소 자신의 신용\n등급에 관심을 갖고 꾸준히 관리하는 것이 중요합니다.\n② 소액이라도 절대 "
+        },
+        {
+          "rank": 10,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 3,
+          "score": 0.3072,
+          "passed_to_reranker": false,
+          "text_excerpt": "지기는 쉬워도 올리는 데는 긴 시간이 필요한 만큼 평소 자신의 신용\n\n꿀팁\n\n등급에 관심을 갖고 꾸준히 관리하는 것이 중요합니다.\n\n② 소액이라도 절대 연체하지 않기\n\n연체정보는 신용등급을 평가할 때 부정적인 영향을 미치는 가장\n\n중요한 요인입니다. 10만원 이상의 금액을 5영업일 이상 연체하면\n\n신용평점이나 신용등급이 하락하는 만큼, 좋은 신용등급을 받기"
+        },
+        {
+          "rank": 11,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 10,
+          "score": 0.3034,
+          "passed_to_reranker": false,
+          "text_excerpt": "⑦ 타인을 위한 보증은 가급적 피하기\n\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n\n것은 가급적 피하는 것이 좋습니다.\n\n⑧ 대출 금융회사 신중하게 결정하기\n\n신용조회회사들은 신용등급 산정시 대부업체나 제2"
+        },
+        {
+          "rank": 12,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 12,
+          "score": 0.3032,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 꿀팁 | ⑦ 타인을 위한 보증은 가급적 피하기\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n것은 가급적 피하는 것이 좋습니다.\n⑧ 대출 금융회사 신중하게 결정하기\n신용조회회사들은 신용등급 산정시 대부업체나 제"
+        },
+        {
+          "rank": 13,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 4,
+          "score": 0.2998,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 제목 | ‘현명한 신용관리요령’ |\n|---|---|\n| 사례 | ● 사회초년생 이○○(28세)씨는 3개의 신용카드를 사용하고 있었는데,\n결제일자를 제대로 확인하지 않아 연체가 발생하였고, 이로 인해\n신용등급이 7등급으로 하락하였다. 결혼준비를 하면서 부족한 보증금을\n마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n거절당하였다. 이때서야 신용"
+        },
+        {
+          "rank": 14,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 1,
+          "score": 0.2654,
+          "passed_to_reranker": false,
+          "text_excerpt": "제 목 : 금융꿀팁 200선 - ① 현명한 신용관리요령\n\n□ 금융감독원은 국민들이 일상적인 금융거래과정에서 알아두면\n\n유익한 실용금융정보(금융꿀팁) 200가지를 선정, 알기 쉽게 정리\n\n하여\n\n◦ 매주 1~3가지씩 보도참고자료를 통해 안내하고\n\n◦ 동시에 2016.9.1일 개설 예정인 금융소비자정보 포털사이트 “파인”\n\n(FINE)에도 게시할 방침임\n\n□ "
+        },
+        {
+          "rank": 15,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 8,
+          "score": 0.256,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 꿀팁 | ③ 신용카드 보다는 체크카드 사용하기\n신용등급에 결정적인 영향을 미치는 연체를 피하는 첫 걸음은\n자신의 상환능력을 벗어난 카드사용을 자제하는 것입니다. 그리고\n이를 실천하기 위한 안전판이 신용카드 보다는 체크카드를 사용하는\n것입니다.\n④ 연체는 오래된 것부터 상환하기\n불가피하게 연체가 발생할 경우 가장 오래된 연체 건부터 상환\n해야 연체로 인한"
+        },
+        {
+          "rank": 16,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 9,
+          "score": 0.2469,
+          "passed_to_reranker": false,
+          "text_excerpt": "신용등급은 보통 신용\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n하는 것이 좋습니다. |\n|---|---|"
+        },
+        {
+          "rank": 17,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 4,
+          "score": 0.2259,
+          "passed_to_reranker": false,
+          "text_excerpt": "기타 | 고용보험 비적용(41) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |\n| 4. 기타 | 이중고용(42) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |"
+        },
+        {
+          "rank": 18,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 10,
+          "score": 0.1629,
+          "passed_to_reranker": false,
+          "text_excerpt": "당사가 제공하는 디지털 트윈과 3D 시뮬레이션 기술은 물리적인 시제품 제작(Prototyping) 횟수를 획기적으로 줄여주어 산업 현장의 폐기물 감소와 탄소 배출 절감에 직접적으로 기여하고 있습니다. 또한 임직원을 위한 일하기 좋은 환경 조성, 지역 사회와의 상생을 위한 꾸준한 사회 공헌 활동, 투명하고 윤리적인 경영 활동을 통해 사회적 책임을 다하는 존경"
+        },
+        {
+          "rank": 19,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 6,
+          "score": 0.1541,
+          "passed_to_reranker": false,
+          "text_excerpt": "(1) 3DEXPERIENCE 플랫폼 (제품 수명주기 혁신)\n다쏘시스템의 3DEXPERIENCE 플랫폼은 사내외 모든 조직이 동일한 데이터를 기반으로 실시간 협업할 수 있는 강력한 환경을 제공합니다. 설계(CATIA), 엔지니어링 및 해석(SIMULIA), 프로젝트 및 데이터 관리(ENOVIA), 디지털 제조 및 생산 계획(DELMIA) 등 핵심 어플리케이"
+        },
+        {
+          "rank": 20,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 7,
+          "score": 0.1413,
+          "passed_to_reranker": false,
+          "text_excerpt": "이러한 기술력은 제조 현장을 넘어 공공기관의 재난 대피 훈련, 교육기관의 실감형 학습, 문화/관광 분야의 가상 투어 플랫폼 등 산업 전반으로 폭넓게 확산 적용되고 있습니다.\n\n(3) AI 기반 스마트 예지보전 및 빅데이터 최적화\n공장 내 수많은 설비에서 발생하는 방대한 센서 데이터(IoT)를 실시간으로 수집하고, 독자적인 AI 머신러닝 알고리즘으로 분석하여"
+        },
+        {
+          "rank": 21,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 4,
+          "score": 0.1258,
+          "passed_to_reranker": false,
+          "text_excerpt": "둘째, 지속적인 혁신(Continuous Innovation)입니다. 빠르게 변화하는 4차 산업혁명 시대에 발맞춰 신기술(AI, 빅데이터, XR 등)에 대한 R&D 투자를 아끼지 않으며, 기술 리더십을 굳건히 확보하고 있습니다. 셋째, 신뢰와 상생 파트너십(Trust & Partnership)입니다. 고객, 임직원, 글로벌 협력사와의 투명한 소통을 통해 장"
+        },
+        {
+          "rank": 22,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 1,
+          "score": 0.122,
+          "passed_to_reranker": false,
+          "text_excerpt": "[이즈파크 회사 소개서]\n\n[ Infinite Solution Park - 해법을 향한 무한한 공간, 이즈파크 ]\n\n1. CEO 인사말\n이즈파크는 2009년 창업 이래, 4차산업혁명 핵심 ICT 솔루션 전문기업으로서 고객의 니즈에 맞는 솔루션과 새로운 기술 서비스를 통해 가치를 창출하고 산업발전에 기여하기 위한 최선의 노력을 다하고 있습니다.\n급변하는 IT"
+        },
+        {
+          "rank": 23,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 2,
+          "score": 0.1188,
+          "passed_to_reranker": false,
+          "text_excerpt": "(1) 스마트 제조 솔루션 (Smart Manufacturing)\n- PLM(제품 수명주기 관리), CAD/CAM/CAE 솔루션 공급 및 컨설팅\n- Dassault Systèmes(다쏘시스템)의 3DEXPERIENCE 플랫폼 전문 파트너\n- MES(제조실행시스템), QMS(품질관리시스템) 구축을 통한 스마트 팩토리 구현\n\n(2) 디지털 트윈 및 XR (메타"
+        },
+        {
+          "rank": 24,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 9,
+          "score": 0.1098,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [공공 및 교육/서비스] 정부 부처 및 지자체와 협력하여 지역 관광 명소나 역사적 유적지를 메타버스 공간에 재현하고, 대학 및 특성화 고등학교에 4차 산업 관련 실감형 실습 콘텐츠를 공급하여 차세대 인재 양성과 에듀테크(EduTech) 혁신을 이끌고 있습니다.\n\n10. 향후 비전 및 ESG 경영 실천 (Future Vision & ESG Manageme"
+        },
+        {
+          "rank": 25,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 5,
+          "score": 0.0943,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [성장기] 2010년대 후반부터는 스마트 팩토리(Smart Factory) 구축 사업으로 비즈니스 영역을 대폭 확장하였습니다. MES, QMS 등 제조 실행 및 품질 관리 시스템을 고도화하며, 항공우주, 자동차 부품, 하이테크, 산업 기계 등 다양한 핵심 산업군에 성공적인 시스템 구축 레퍼런스를 확보했습니다.\n- [혁신기] 최근에는 4차 산업혁명의 핵심"
+        }
+      ],
+      "multi_query_ms": 2155.77,
+      "retrieval_ms": 2208.53,
+      "reranking_ms": 12293.94,
+      "gpt_ms": 1744.84,
+      "total_ms": 18403.98,
+      "client_total_ms": 18416.78,
+      "answer": "사업장 이전으로 출퇴근이 왕복 3시간 이상 소요되게 되어 자진퇴사하는 경우, 회사에 원인이 있으므로 근로자가 실업급여를 받을 수 있는 중요한 코드(코드 12)에 해당합니다. 다만, 관련 증빙 자료(출퇴근 기록 등)를 철저히 보관해야 합니다.",
+      "source": [
+        "실사유 코드.docx"
+      ],
+      "top_rerank_score": 0.9993,
+      "auto_retrieval_stage": {
+        "available": true,
+        "k": 25,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "due_diligence_reason_codes",
+            "chunk_index": 6
+          }
+        ]
+      },
+      "auto_rerank_stage": {
+        "available": true,
+        "k": 3,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "due_diligence_reason_codes",
+            "chunk_index": 6
+          }
+        ]
+      },
+      "auto_items": {
+        "matched": 1,
+        "total": 1,
+        "missing": []
+      },
+      "auto_refused": null
+    },
+    {
+      "question_id": "H-04",
+      "type": "정확한 키워드/코드형",
+      "run": 1,
+      "question": "고용보험 비적용과 이중고용은 변경 후 몇 번 코드로 통합되었나요?",
+      "out_of_scope": false,
+      "selected_collections": "ALL(3) - Routing 미적용",
+      "retrieval_top_k": 8,
+      "retrieval_candidate_count": 27,
+      "rerank_candidate_count": 8,
+      "final_context_count": 3,
+      "multi_query_used": true,
+      "multi_queries": [
+        "고용보험 비적용과 이중고용이 변경되어 통합된 코드는 몇 번인가요?",
+        "고용보험 비적용 및 이중고용 관련 코드가 변경 후 몇 번으로 합쳐졌나요?",
+        "고용보험 비적용과 이중고용이 변경되어 하나의 코드로 통합된 번호는 무엇인가요?"
+      ],
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 5,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.4764,
+          "rerank_score": 0.9893,
+          "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+        },
+        {
+          "rank": 2,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 4,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.5841,
+          "rerank_score": 0.0367,
+          "text_excerpt": "기타 | 고용보험 비적용(41) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |\n| 4. 기타 | 이중고용(42) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |"
+        },
+        {
+          "rank": 3,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 3,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.4035,
+          "rerank_score": 0.0033,
+          "text_excerpt": "폐업 도산 |\n| 2. 회사사정에 의 한 이직 | 경영상해고(23) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 23. 경영상 필요 및 회사불황으로 인원감축 등에 의한 퇴사(해고 권고사직 명예 퇴직 포함) |\n| 2. 회사사정에 의 한 이직 | 근로조건변동(24) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 26. 근로자의 귀책사유에 의한 징"
+        }
+      ],
+      "retrieval_candidates": [
+        {
+          "rank": 1,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 4,
+          "score": 0.5841,
+          "passed_to_reranker": true,
+          "text_excerpt": "기타 | 고용보험 비적용(41) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |\n| 4. 기타 | 이중고용(42) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |"
+        },
+        {
+          "rank": 2,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 5,
+          "score": 0.4764,
+          "passed_to_reranker": true,
+          "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+        },
+        {
+          "rank": 3,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 11,
+          "score": 0.4365,
+          "passed_to_reranker": true,
+          "text_excerpt": "하면 신용등급 개선에 도움을 받을 수 있습니다.\n\n⑩ 신용관리체험단 활용하기\n\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n\n프로그램을 활용하면 도움을 받을 수 있습니다."
+        },
+        {
+          "rank": 4,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 8,
+          "score": 0.4117,
+          "passed_to_reranker": true,
+          "text_excerpt": "## 상실신고 및 이직확인서 처리 시 유의사항\n\n상실사유와 이직확인서의 일치: 4대보험 상실신고서에 기재하는 '상실사유'와 고용센터에 제출하는 '이직확인서' 상의 구체적 이직 사유는 반드시 일치해야 합니다. 코드가 상이할 경우 고용센터로부터 소명 요청을 받을 수 있습니다.\n\n허위 신고 시 과태료 부과: 근로자의 실업급여 수급을 도와주기 위해 자진퇴사(11번"
+        },
+        {
+          "rank": 5,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 13,
+          "score": 0.4055,
+          "passed_to_reranker": true,
+          "text_excerpt": "⑩ 신용관리체험단 활용하기\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n프로그램을 활용하면 도움을 받을 수 있습니다. |\n|---|---|"
+        },
+        {
+          "rank": 6,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 3,
+          "score": 0.4035,
+          "passed_to_reranker": true,
+          "text_excerpt": "폐업 도산 |\n| 2. 회사사정에 의 한 이직 | 경영상해고(23) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 23. 경영상 필요 및 회사불황으로 인원감축 등에 의한 퇴사(해고 권고사직 명예 퇴직 포함) |\n| 2. 회사사정에 의 한 이직 | 근로조건변동(24) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 26. 근로자의 귀책사유에 의한 징"
+        },
+        {
+          "rank": 7,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 7,
+          "score": 0.3874,
+          "passed_to_reranker": true,
+          "text_excerpt": "꾸준히 이용하는 것이 신용등급에 유리합니다. 신용등급은 보통 신용\n\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n\n하는 것이 좋습니다."
+        },
+        {
+          "rank": 8,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 10,
+          "score": 0.3867,
+          "passed_to_reranker": true,
+          "text_excerpt": "⑦ 타인을 위한 보증은 가급적 피하기\n\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n\n것은 가급적 피하는 것이 좋습니다.\n\n⑧ 대출 금융회사 신중하게 결정하기\n\n신용조회회사들은 신용등급 산정시 대부업체나 제2"
+        },
+        {
+          "rank": 9,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 12,
+          "score": 0.3848,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 꿀팁 | ⑦ 타인을 위한 보증은 가급적 피하기\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n것은 가급적 피하는 것이 좋습니다.\n⑧ 대출 금융회사 신중하게 결정하기\n신용조회회사들은 신용등급 산정시 대부업체나 제"
+        },
+        {
+          "rank": 10,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 9,
+          "score": 0.3786,
+          "passed_to_reranker": false,
+          "text_excerpt": "신용등급은 보통 신용\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n하는 것이 좋습니다. |\n|---|---|"
+        },
+        {
+          "rank": 11,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 9,
+          "score": 0.3741,
+          "passed_to_reranker": false,
+          "text_excerpt": "## 신고 기한 및 위반 시 제재 사항 (과태료 기준)\n\n상실신고 및 이직확인서 처리는 법정 기한이 엄격하게 정해져 있으며, 이를 위반하거나 거짓으로 신고할 경우 사업장에 과태료가 부과될 수 있으므로 인사 담당자의 각별한 주의가 필요합니다.\n\n## 법정 신고 기한\n\n피보험자격 상실신고서: 근로자가 퇴사한 날(상실일)이 속하는 달의 다음 달 15일까지 관할 "
+        },
+        {
+          "rank": 12,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 7,
+          "score": 0.3716,
+          "passed_to_reranker": false,
+          "text_excerpt": "[코드 23] 경영상 필요 및 인원 감축 등에 의한 퇴사\n\n적용 대상: 경영 악화, 부서 폐지, 직제 개편 등에 따른 희망퇴직, 명예퇴직, 권고사직 등.\n\n주의사항: 이 코드로 상실신고가 들어가면 회사는 향후 일정 기간 동안 고용유지지원금 등 각종 정부 지원금 혜택을 받는 데 제한이 생길 수 있습니다. 단순한 업무 부적응으로 인한 퇴사를 무분별하게 23번으"
+        },
+        {
+          "rank": 13,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 6,
+          "score": 0.3691,
+          "passed_to_reranker": false,
+          "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+        },
+        {
+          "rank": 14,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 1,
+          "score": 0.3512,
+          "passed_to_reranker": false,
+          "text_excerpt": "제 목 : 금융꿀팁 200선 - ① 현명한 신용관리요령\n\n□ 금융감독원은 국민들이 일상적인 금융거래과정에서 알아두면\n\n유익한 실용금융정보(금융꿀팁) 200가지를 선정, 알기 쉽게 정리\n\n하여\n\n◦ 매주 1~3가지씩 보도참고자료를 통해 안내하고\n\n◦ 동시에 2016.9.1일 개설 예정인 금융소비자정보 포털사이트 “파인”\n\n(FINE)에도 게시할 방침임\n\n□ "
+        },
+        {
+          "rank": 15,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 2,
+          "score": 0.3415,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 대분류(4개) | 중분류 (변경 전: 14개) | 대분류(4개) | 중분류(변경 후: 8개) |\n|---|---|---|---|\n| 1. 개인사정에 의 한 이직 | 전직 자영업(11) | 1. 자진퇴사 | 11.개인사정으로 인한 자진퇴사 |\n| 1. 개인사정에 의 한 이직 | 결혼출산,\t거주지\t변경 등 가사사정(12) | 1. 자진퇴사 | 11.개인사정"
+        },
+        {
+          "rank": 16,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 1,
+          "score": 0.3337,
+          "passed_to_reranker": false,
+          "text_excerpt": "실사유 분류 변경 내용(대분류․중분류)"
+        },
+        {
+          "rank": 17,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 8,
+          "score": 0.3326,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 꿀팁 | ③ 신용카드 보다는 체크카드 사용하기\n신용등급에 결정적인 영향을 미치는 연체를 피하는 첫 걸음은\n자신의 상환능력을 벗어난 카드사용을 자제하는 것입니다. 그리고\n이를 실천하기 위한 안전판이 신용카드 보다는 체크카드를 사용하는\n것입니다.\n④ 연체는 오래된 것부터 상환하기\n불가피하게 연체가 발생할 경우 가장 오래된 연체 건부터 상환\n해야 연체로 인한"
+        },
+        {
+          "rank": 18,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 6,
+          "score": 0.3307,
+          "passed_to_reranker": false,
+          "text_excerpt": "③ 신용카드 보다는 체크카드 사용하기\n\n신용등급에 결정적인 영향을 미치는 연체를 피하는 첫 걸음은\n\n자신의 상환능력을 벗어난 카드사용을 자제하는 것입니다. 그리고\n\n이를 실천하기 위한 안전판이 신용카드 보다는 체크카드를 사용하는\n\n것입니다.\n\n④ 연체는 오래된 것부터 상환하기\n\n불가피하게 연체가 발생할 경우 가장 오래된 연체 건부터 상환\n\n해야 연체로 인한"
+        },
+        {
+          "rank": 19,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 7,
+          "score": 0.2111,
+          "passed_to_reranker": false,
+          "text_excerpt": "이러한 기술력은 제조 현장을 넘어 공공기관의 재난 대피 훈련, 교육기관의 실감형 학습, 문화/관광 분야의 가상 투어 플랫폼 등 산업 전반으로 폭넓게 확산 적용되고 있습니다.\n\n(3) AI 기반 스마트 예지보전 및 빅데이터 최적화\n공장 내 수많은 설비에서 발생하는 방대한 센서 데이터(IoT)를 실시간으로 수집하고, 독자적인 AI 머신러닝 알고리즘으로 분석하여"
+        },
+        {
+          "rank": 20,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 1,
+          "score": 0.203,
+          "passed_to_reranker": false,
+          "text_excerpt": "[이즈파크 회사 소개서]\n\n[ Infinite Solution Park - 해법을 향한 무한한 공간, 이즈파크 ]\n\n1. CEO 인사말\n이즈파크는 2009년 창업 이래, 4차산업혁명 핵심 ICT 솔루션 전문기업으로서 고객의 니즈에 맞는 솔루션과 새로운 기술 서비스를 통해 가치를 창출하고 산업발전에 기여하기 위한 최선의 노력을 다하고 있습니다.\n급변하는 IT"
+        },
+        {
+          "rank": 21,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 9,
+          "score": 0.2021,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [공공 및 교육/서비스] 정부 부처 및 지자체와 협력하여 지역 관광 명소나 역사적 유적지를 메타버스 공간에 재현하고, 대학 및 특성화 고등학교에 4차 산업 관련 실감형 실습 콘텐츠를 공급하여 차세대 인재 양성과 에듀테크(EduTech) 혁신을 이끌고 있습니다.\n\n10. 향후 비전 및 ESG 경영 실천 (Future Vision & ESG Manageme"
+        },
+        {
+          "rank": 22,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 8,
+          "score": 0.1992,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [항공/우주 및 방위 산업] 수만 개의 부품으로 이루어진 고도의 정밀성이 요구되는 항공기 제조사를 위해, 복잡한 대형 어셈블리(Assembly) 관리와 안전성 확보를 위한 경량화 설계를 완벽히 지원하는 고도화된 PLM 시스템을 성공적으로 구축했습니다.\n- [자동차 및 모빌리티 산업] 전기차 및 자율주행 시대를 맞이하여 빠르게 변화하는 모빌리티 트렌드에 "
+        },
+        {
+          "rank": 23,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 5,
+          "score": 0.1848,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [성장기] 2010년대 후반부터는 스마트 팩토리(Smart Factory) 구축 사업으로 비즈니스 영역을 대폭 확장하였습니다. MES, QMS 등 제조 실행 및 품질 관리 시스템을 고도화하며, 항공우주, 자동차 부품, 하이테크, 산업 기계 등 다양한 핵심 산업군에 성공적인 시스템 구축 레퍼런스를 확보했습니다.\n- [혁신기] 최근에는 4차 산업혁명의 핵심"
+        },
+        {
+          "rank": 24,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 4,
+          "score": 0.1663,
+          "passed_to_reranker": false,
+          "text_excerpt": "둘째, 지속적인 혁신(Continuous Innovation)입니다. 빠르게 변화하는 4차 산업혁명 시대에 발맞춰 신기술(AI, 빅데이터, XR 등)에 대한 R&D 투자를 아끼지 않으며, 기술 리더십을 굳건히 확보하고 있습니다. 셋째, 신뢰와 상생 파트너십(Trust & Partnership)입니다. 고객, 임직원, 글로벌 협력사와의 투명한 소통을 통해 장"
+        },
+        {
+          "rank": 25,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 3,
+          "score": 0.161,
+          "passed_to_reranker": false,
+          "text_excerpt": "핵심 경쟁력\n- 풍부한 산업별(항공, 자동차, 하이테크, 소비재 등) 구축 경험과 노하우\n- 검증된 글로벌 솔루션(다쏘시스템 등)과 자체 개발 솔루션의 융합\n- 전문 엔지니어 및 개발 인력을 통한 체계적인 기술 지원 및 유지보수\n\n5. 오시는 길 및 연락처\n- 본사: 서울특별시 금천구 가산디지털2로 43-14 한화비즈메트로2차 803~820호\n- R&D 센"
+        },
+        {
+          "rank": 26,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 6,
+          "score": 0.1531,
+          "passed_to_reranker": false,
+          "text_excerpt": "(1) 3DEXPERIENCE 플랫폼 (제품 수명주기 혁신)\n다쏘시스템의 3DEXPERIENCE 플랫폼은 사내외 모든 조직이 동일한 데이터를 기반으로 실시간 협업할 수 있는 강력한 환경을 제공합니다. 설계(CATIA), 엔지니어링 및 해석(SIMULIA), 프로젝트 및 데이터 관리(ENOVIA), 디지털 제조 및 생산 계획(DELMIA) 등 핵심 어플리케이"
+        },
+        {
+          "rank": 27,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 10,
+          "score": 0.1245,
+          "passed_to_reranker": false,
+          "text_excerpt": "당사가 제공하는 디지털 트윈과 3D 시뮬레이션 기술은 물리적인 시제품 제작(Prototyping) 횟수를 획기적으로 줄여주어 산업 현장의 폐기물 감소와 탄소 배출 절감에 직접적으로 기여하고 있습니다. 또한 임직원을 위한 일하기 좋은 환경 조성, 지역 사회와의 상생을 위한 꾸준한 사회 공헌 활동, 투명하고 윤리적인 경영 활동을 통해 사회적 책임을 다하는 존경"
+        }
+      ],
+      "multi_query_ms": 1538.62,
+      "retrieval_ms": 2515.46,
+      "reranking_ms": 8375.67,
+      "gpt_ms": 1150.48,
+      "total_ms": 13580.86,
+      "client_total_ms": 13595.21,
+      "answer": "고용보험 비적용과 이중고용은 변경 후 41번 코드로 통합되었습니다. 이는 중복성 코드 통폐합의 일환으로, 실무자의 코드 선택 부담을 줄이기 위해 이루어졌습니다.",
+      "source": [
+        "실사유 코드.docx"
+      ],
+      "top_rerank_score": 0.9893,
+      "auto_retrieval_stage": {
+        "available": true,
+        "k": 27,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "due_diligence_reason_codes",
+            "chunk_index": 4
+          },
+          {
+            "rank": 2,
+            "collection": "due_diligence_reason_codes",
+            "chunk_index": 5
+          }
+        ]
+      },
+      "auto_rerank_stage": {
+        "available": true,
+        "k": 3,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "due_diligence_reason_codes",
+            "chunk_index": 5
+          },
+          {
+            "rank": 2,
+            "collection": "due_diligence_reason_codes",
+            "chunk_index": 4
+          }
+        ]
+      },
+      "auto_items": {
+        "matched": 1,
+        "total": 1,
+        "missing": []
+      },
+      "auto_refused": null
+    },
+    {
+      "question_id": "H-05",
+      "type": "정확한 키워드/코드형",
+      "run": 1,
+      "question": "금융감독원이 개설하기로 한 금융소비자정보 포털사이트의 이름은 무엇인가요?",
+      "out_of_scope": false,
+      "selected_collections": "ALL(3) - Routing 미적용",
+      "retrieval_top_k": 8,
+      "retrieval_candidate_count": 26,
+      "rerank_candidate_count": 8,
+      "final_context_count": 3,
+      "multi_query_used": true,
+      "multi_queries": [
+        "금융감독원이 만들 예정인 금융소비자정보 포털사이트 명칭은 무엇인가요?",
+        "금융소비자정보 포털사이트의 공식 명칭은 무엇인가요?",
+        "금융감독원이 개설하는 금융소비자정보 포털사이트 이름이 어떻게 되나요?"
+      ],
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 1,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.4804,
+          "rerank_score": 0.9945,
+          "text_excerpt": "제 목 : 금융꿀팁 200선 - ① 현명한 신용관리요령\n\n□ 금융감독원은 국민들이 일상적인 금융거래과정에서 알아두면\n\n유익한 실용금융정보(금융꿀팁) 200가지를 선정, 알기 쉽게 정리\n\n하여\n\n◦ 매주 1~3가지씩 보도참고자료를 통해 안내하고\n\n◦ 동시에 2016.9.1일 개설 예정인 금융소비자정보 포털사이트 “파인”\n\n(FINE)에도 게시할 방침임\n\n□ "
+        },
+        {
+          "rank": 2,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 9,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.2958,
+          "rerank_score": 0.0001,
+          "text_excerpt": "신용등급은 보통 신용\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n하는 것이 좋습니다. |\n|---|---|"
+        },
+        {
+          "rank": 3,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 10,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.3052,
+          "rerank_score": 0.0001,
+          "text_excerpt": "⑦ 타인을 위한 보증은 가급적 피하기\n\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n\n것은 가급적 피하는 것이 좋습니다.\n\n⑧ 대출 금융회사 신중하게 결정하기\n\n신용조회회사들은 신용등급 산정시 대부업체나 제2"
+        }
+      ],
+      "retrieval_candidates": [
+        {
+          "rank": 1,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 1,
+          "score": 0.4804,
+          "passed_to_reranker": true,
+          "text_excerpt": "제 목 : 금융꿀팁 200선 - ① 현명한 신용관리요령\n\n□ 금융감독원은 국민들이 일상적인 금융거래과정에서 알아두면\n\n유익한 실용금융정보(금융꿀팁) 200가지를 선정, 알기 쉽게 정리\n\n하여\n\n◦ 매주 1~3가지씩 보도참고자료를 통해 안내하고\n\n◦ 동시에 2016.9.1일 개설 예정인 금융소비자정보 포털사이트 “파인”\n\n(FINE)에도 게시할 방침임\n\n□ "
+        },
+        {
+          "rank": 2,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 9,
+          "score": 0.3109,
+          "passed_to_reranker": true,
+          "text_excerpt": "- [공공 및 교육/서비스] 정부 부처 및 지자체와 협력하여 지역 관광 명소나 역사적 유적지를 메타버스 공간에 재현하고, 대학 및 특성화 고등학교에 4차 산업 관련 실감형 실습 콘텐츠를 공급하여 차세대 인재 양성과 에듀테크(EduTech) 혁신을 이끌고 있습니다.\n\n10. 향후 비전 및 ESG 경영 실천 (Future Vision & ESG Manageme"
+        },
+        {
+          "rank": 3,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 10,
+          "score": 0.3052,
+          "passed_to_reranker": true,
+          "text_excerpt": "⑦ 타인을 위한 보증은 가급적 피하기\n\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n\n것은 가급적 피하는 것이 좋습니다.\n\n⑧ 대출 금융회사 신중하게 결정하기\n\n신용조회회사들은 신용등급 산정시 대부업체나 제2"
+        },
+        {
+          "rank": 4,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 12,
+          "score": 0.3016,
+          "passed_to_reranker": true,
+          "text_excerpt": "| 꿀팁 | ⑦ 타인을 위한 보증은 가급적 피하기\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n것은 가급적 피하는 것이 좋습니다.\n⑧ 대출 금융회사 신중하게 결정하기\n신용조회회사들은 신용등급 산정시 대부업체나 제"
+        },
+        {
+          "rank": 5,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 9,
+          "score": 0.2958,
+          "passed_to_reranker": true,
+          "text_excerpt": "신용등급은 보통 신용\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n하는 것이 좋습니다. |\n|---|---|"
+        },
+        {
+          "rank": 6,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 1,
+          "score": 0.2887,
+          "passed_to_reranker": true,
+          "text_excerpt": "[이즈파크 회사 소개서]\n\n[ Infinite Solution Park - 해법을 향한 무한한 공간, 이즈파크 ]\n\n1. CEO 인사말\n이즈파크는 2009년 창업 이래, 4차산업혁명 핵심 ICT 솔루션 전문기업으로서 고객의 니즈에 맞는 솔루션과 새로운 기술 서비스를 통해 가치를 창출하고 산업발전에 기여하기 위한 최선의 노력을 다하고 있습니다.\n급변하는 IT"
+        },
+        {
+          "rank": 7,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 8,
+          "score": 0.2718,
+          "passed_to_reranker": true,
+          "text_excerpt": "## 상실신고 및 이직확인서 처리 시 유의사항\n\n상실사유와 이직확인서의 일치: 4대보험 상실신고서에 기재하는 '상실사유'와 고용센터에 제출하는 '이직확인서' 상의 구체적 이직 사유는 반드시 일치해야 합니다. 코드가 상이할 경우 고용센터로부터 소명 요청을 받을 수 있습니다.\n\n허위 신고 시 과태료 부과: 근로자의 실업급여 수급을 도와주기 위해 자진퇴사(11번"
+        },
+        {
+          "rank": 8,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 4,
+          "score": 0.2692,
+          "passed_to_reranker": true,
+          "text_excerpt": "| 제목 | ‘현명한 신용관리요령’ |\n|---|---|\n| 사례 | ● 사회초년생 이○○(28세)씨는 3개의 신용카드를 사용하고 있었는데,\n결제일자를 제대로 확인하지 않아 연체가 발생하였고, 이로 인해\n신용등급이 7등급으로 하락하였다. 결혼준비를 하면서 부족한 보증금을\n마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n거절당하였다. 이때서야 신용"
+        },
+        {
+          "rank": 9,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 5,
+          "score": 0.2653,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [성장기] 2010년대 후반부터는 스마트 팩토리(Smart Factory) 구축 사업으로 비즈니스 영역을 대폭 확장하였습니다. MES, QMS 등 제조 실행 및 품질 관리 시스템을 고도화하며, 항공우주, 자동차 부품, 하이테크, 산업 기계 등 다양한 핵심 산업군에 성공적인 시스템 구축 레퍼런스를 확보했습니다.\n- [혁신기] 최근에는 4차 산업혁명의 핵심"
+        },
+        {
+          "rank": 10,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 13,
+          "score": 0.259,
+          "passed_to_reranker": false,
+          "text_excerpt": "⑩ 신용관리체험단 활용하기\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n프로그램을 활용하면 도움을 받을 수 있습니다. |\n|---|---|"
+        },
+        {
+          "rank": 11,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 3,
+          "score": 0.2586,
+          "passed_to_reranker": false,
+          "text_excerpt": "핵심 경쟁력\n- 풍부한 산업별(항공, 자동차, 하이테크, 소비재 등) 구축 경험과 노하우\n- 검증된 글로벌 솔루션(다쏘시스템 등)과 자체 개발 솔루션의 융합\n- 전문 엔지니어 및 개발 인력을 통한 체계적인 기술 지원 및 유지보수\n\n5. 오시는 길 및 연락처\n- 본사: 서울특별시 금천구 가산디지털2로 43-14 한화비즈메트로2차 803~820호\n- R&D 센"
+        },
+        {
+          "rank": 12,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 5,
+          "score": 0.2577,
+          "passed_to_reranker": false,
+          "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+        },
+        {
+          "rank": 13,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 7,
+          "score": 0.2556,
+          "passed_to_reranker": false,
+          "text_excerpt": "꾸준히 이용하는 것이 신용등급에 유리합니다. 신용등급은 보통 신용\n\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n\n하는 것이 좋습니다."
+        },
+        {
+          "rank": 14,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 11,
+          "score": 0.2473,
+          "passed_to_reranker": false,
+          "text_excerpt": "하면 신용등급 개선에 도움을 받을 수 있습니다.\n\n⑩ 신용관리체험단 활용하기\n\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n\n프로그램을 활용하면 도움을 받을 수 있습니다."
+        },
+        {
+          "rank": 15,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 4,
+          "score": 0.2422,
+          "passed_to_reranker": false,
+          "text_excerpt": "기타 | 고용보험 비적용(41) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |\n| 4. 기타 | 이중고용(42) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |"
+        },
+        {
+          "rank": 16,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 9,
+          "score": 0.2389,
+          "passed_to_reranker": false,
+          "text_excerpt": "## 신고 기한 및 위반 시 제재 사항 (과태료 기준)\n\n상실신고 및 이직확인서 처리는 법정 기한이 엄격하게 정해져 있으며, 이를 위반하거나 거짓으로 신고할 경우 사업장에 과태료가 부과될 수 있으므로 인사 담당자의 각별한 주의가 필요합니다.\n\n## 법정 신고 기한\n\n피보험자격 상실신고서: 근로자가 퇴사한 날(상실일)이 속하는 달의 다음 달 15일까지 관할 "
+        },
+        {
+          "rank": 17,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 2,
+          "score": 0.2362,
+          "passed_to_reranker": false,
+          "text_excerpt": "마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n\n거절당하였다. 이때서야 신용등급의 중요성을 인식하고 평소 신용\n\n관리를 소홀히 한 것을 후회하였다.\n\n사례\n\n● 직장인 김○○(38세)씨는 할부로 자동차를 구입하였는데, 신용관리의\n\n중요성을 인식하지 못하고 할부금을 연체하여 신용등급이 5등급\n\n으로 하락하였다. 전세금 마련을 위해 은행으로부터 5"
+        },
+        {
+          "rank": 18,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 6,
+          "score": 0.2337,
+          "passed_to_reranker": false,
+          "text_excerpt": "(1) 3DEXPERIENCE 플랫폼 (제품 수명주기 혁신)\n다쏘시스템의 3DEXPERIENCE 플랫폼은 사내외 모든 조직이 동일한 데이터를 기반으로 실시간 협업할 수 있는 강력한 환경을 제공합니다. 설계(CATIA), 엔지니어링 및 해석(SIMULIA), 프로젝트 및 데이터 관리(ENOVIA), 디지털 제조 및 생산 계획(DELMIA) 등 핵심 어플리케이"
+        },
+        {
+          "rank": 19,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 4,
+          "score": 0.2309,
+          "passed_to_reranker": false,
+          "text_excerpt": "둘째, 지속적인 혁신(Continuous Innovation)입니다. 빠르게 변화하는 4차 산업혁명 시대에 발맞춰 신기술(AI, 빅데이터, XR 등)에 대한 R&D 투자를 아끼지 않으며, 기술 리더십을 굳건히 확보하고 있습니다. 셋째, 신뢰와 상생 파트너십(Trust & Partnership)입니다. 고객, 임직원, 글로벌 협력사와의 투명한 소통을 통해 장"
+        },
+        {
+          "rank": 20,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 5,
+          "score": 0.2248,
+          "passed_to_reranker": false,
+          "text_excerpt": "‘현명한 신용관리 요령'을 실천해 보세요!\n① 평소 자기 신용등급에 관심 기울이기\n신용등급은 금융거래에 있어 신분증과도 같습니다. 대출 가능여부는\n물론 대출한도, 대출금리를 결정하는 기본지표가 되기 때문입니다. 떨어\n지기는 쉬워도 올리는 데는 긴 시간이 필요한 만큼 평소 자신의 신용\n등급에 관심을 갖고 꾸준히 관리하는 것이 중요합니다.\n② 소액이라도 절대 "
+        },
+        {
+          "rank": 21,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 7,
+          "score": 0.218,
+          "passed_to_reranker": false,
+          "text_excerpt": "이러한 기술력은 제조 현장을 넘어 공공기관의 재난 대피 훈련, 교육기관의 실감형 학습, 문화/관광 분야의 가상 투어 플랫폼 등 산업 전반으로 폭넓게 확산 적용되고 있습니다.\n\n(3) AI 기반 스마트 예지보전 및 빅데이터 최적화\n공장 내 수많은 설비에서 발생하는 방대한 센서 데이터(IoT)를 실시간으로 수집하고, 독자적인 AI 머신러닝 알고리즘으로 분석하여"
+        },
+        {
+          "rank": 22,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 10,
+          "score": 0.216,
+          "passed_to_reranker": false,
+          "text_excerpt": "당사가 제공하는 디지털 트윈과 3D 시뮬레이션 기술은 물리적인 시제품 제작(Prototyping) 횟수를 획기적으로 줄여주어 산업 현장의 폐기물 감소와 탄소 배출 절감에 직접적으로 기여하고 있습니다. 또한 임직원을 위한 일하기 좋은 환경 조성, 지역 사회와의 상생을 위한 꾸준한 사회 공헌 활동, 투명하고 윤리적인 경영 활동을 통해 사회적 책임을 다하는 존경"
+        },
+        {
+          "rank": 23,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 7,
+          "score": 0.2154,
+          "passed_to_reranker": false,
+          "text_excerpt": "[코드 23] 경영상 필요 및 인원 감축 등에 의한 퇴사\n\n적용 대상: 경영 악화, 부서 폐지, 직제 개편 등에 따른 희망퇴직, 명예퇴직, 권고사직 등.\n\n주의사항: 이 코드로 상실신고가 들어가면 회사는 향후 일정 기간 동안 고용유지지원금 등 각종 정부 지원금 혜택을 받는 데 제한이 생길 수 있습니다. 단순한 업무 부적응으로 인한 퇴사를 무분별하게 23번으"
+        },
+        {
+          "rank": 24,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 3,
+          "score": 0.2091,
+          "passed_to_reranker": false,
+          "text_excerpt": "폐업 도산 |\n| 2. 회사사정에 의 한 이직 | 경영상해고(23) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 23. 경영상 필요 및 회사불황으로 인원감축 등에 의한 퇴사(해고 권고사직 명예 퇴직 포함) |\n| 2. 회사사정에 의 한 이직 | 근로조건변동(24) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 26. 근로자의 귀책사유에 의한 징"
+        },
+        {
+          "rank": 25,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 2,
+          "score": 0.2052,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 대분류(4개) | 중분류 (변경 전: 14개) | 대분류(4개) | 중분류(변경 후: 8개) |\n|---|---|---|---|\n| 1. 개인사정에 의 한 이직 | 전직 자영업(11) | 1. 자진퇴사 | 11.개인사정으로 인한 자진퇴사 |\n| 1. 개인사정에 의 한 이직 | 결혼출산,\t거주지\t변경 등 가사사정(12) | 1. 자진퇴사 | 11.개인사정"
+        },
+        {
+          "rank": 26,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 6,
+          "score": 0.1928,
+          "passed_to_reranker": false,
+          "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+        }
+      ],
+      "multi_query_ms": 1478.14,
+      "retrieval_ms": 2340.93,
+      "reranking_ms": 7143.93,
+      "gpt_ms": 1652.71,
+      "total_ms": 12616.34,
+      "client_total_ms": 12620.61,
+      "answer": "금융감독원은 2016년 9월 1일 개설 예정인 금융소비자정보 포털사이트 이름을 \"파인(FINE)\"이라고 명시하고 있습니다. 이 사이트에는 금융꿀팁 200선이 게시될 예정입니다.",
+      "source": [
+        "현명한 신용관리 요령.pdf"
+      ],
+      "top_rerank_score": 0.9945,
+      "auto_retrieval_stage": {
+        "available": true,
+        "k": 26,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "credit_management_guide",
+            "chunk_index": 1
+          }
+        ]
+      },
+      "auto_rerank_stage": {
+        "available": true,
+        "k": 3,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "credit_management_guide",
+            "chunk_index": 1
+          }
+        ]
+      },
+      "auto_items": {
+        "matched": 1,
+        "total": 1,
+        "missing": []
+      },
+      "auto_refused": null
+    },
+    {
+      "question_id": "H-06",
+      "type": "의미 기반 질문",
+      "run": 1,
+      "question": "다른 사람 빚보증을 서주면 내 신용에 문제가 생기나요?",
+      "out_of_scope": false,
+      "selected_collections": "ALL(3) - Routing 미적용",
+      "retrieval_top_k": 8,
+      "retrieval_candidate_count": 28,
+      "rerank_candidate_count": 8,
+      "final_context_count": 3,
+      "multi_query_used": true,
+      "multi_queries": [
+        "다른 사람의 채무 보증을 서면 내 신용에 영향이 있나요?",
+        "남의 빚 보증을 서면 내 신용등급에 문제가 생기나요?",
+        "타인의 대출 보증을 서주면 내 신용 점수에 영향이 있나요?"
+      ],
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 10,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.4461,
+          "rerank_score": 0.9218,
+          "text_excerpt": "⑦ 타인을 위한 보증은 가급적 피하기\n\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n\n것은 가급적 피하는 것이 좋습니다.\n\n⑧ 대출 금융회사 신중하게 결정하기\n\n신용조회회사들은 신용등급 산정시 대부업체나 제2"
+        },
+        {
+          "rank": 2,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 12,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.4391,
+          "rerank_score": 0.8942,
+          "text_excerpt": "| 꿀팁 | ⑦ 타인을 위한 보증은 가급적 피하기\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n것은 가급적 피하는 것이 좋습니다.\n⑧ 대출 금융회사 신중하게 결정하기\n신용조회회사들은 신용등급 산정시 대부업체나 제"
+        },
+        {
+          "rank": 3,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 1,
+          "splitter": "StructuredSplitter",
+          "retriever_score": 0.3544,
+          "rerank_score": 0.004,
+          "text_excerpt": "제 목 : 금융꿀팁 200선 - ① 현명한 신용관리요령\n\n□ 금융감독원은 국민들이 일상적인 금융거래과정에서 알아두면\n\n유익한 실용금융정보(금융꿀팁) 200가지를 선정, 알기 쉽게 정리\n\n하여\n\n◦ 매주 1~3가지씩 보도참고자료를 통해 안내하고\n\n◦ 동시에 2016.9.1일 개설 예정인 금융소비자정보 포털사이트 “파인”\n\n(FINE)에도 게시할 방침임\n\n□ "
+        }
+      ],
+      "retrieval_candidates": [
+        {
+          "rank": 1,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 10,
+          "score": 0.4461,
+          "passed_to_reranker": true,
+          "text_excerpt": "⑦ 타인을 위한 보증은 가급적 피하기\n\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n\n것은 가급적 피하는 것이 좋습니다.\n\n⑧ 대출 금융회사 신중하게 결정하기\n\n신용조회회사들은 신용등급 산정시 대부업체나 제2"
+        },
+        {
+          "rank": 2,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 12,
+          "score": 0.4391,
+          "passed_to_reranker": true,
+          "text_excerpt": "| 꿀팁 | ⑦ 타인을 위한 보증은 가급적 피하기\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n것은 가급적 피하는 것이 좋습니다.\n⑧ 대출 금융회사 신중하게 결정하기\n신용조회회사들은 신용등급 산정시 대부업체나 제"
+        },
+        {
+          "rank": 3,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 4,
+          "score": 0.402,
+          "passed_to_reranker": true,
+          "text_excerpt": "| 제목 | ‘현명한 신용관리요령’ |\n|---|---|\n| 사례 | ● 사회초년생 이○○(28세)씨는 3개의 신용카드를 사용하고 있었는데,\n결제일자를 제대로 확인하지 않아 연체가 발생하였고, 이로 인해\n신용등급이 7등급으로 하락하였다. 결혼준비를 하면서 부족한 보증금을\n마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n거절당하였다. 이때서야 신용"
+        },
+        {
+          "rank": 4,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 5,
+          "score": 0.3909,
+          "passed_to_reranker": true,
+          "text_excerpt": "‘현명한 신용관리 요령'을 실천해 보세요!\n① 평소 자기 신용등급에 관심 기울이기\n신용등급은 금융거래에 있어 신분증과도 같습니다. 대출 가능여부는\n물론 대출한도, 대출금리를 결정하는 기본지표가 되기 때문입니다. 떨어\n지기는 쉬워도 올리는 데는 긴 시간이 필요한 만큼 평소 자신의 신용\n등급에 관심을 갖고 꾸준히 관리하는 것이 중요합니다.\n② 소액이라도 절대 "
+        },
+        {
+          "rank": 5,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 8,
+          "score": 0.3789,
+          "passed_to_reranker": true,
+          "text_excerpt": "## 상실신고 및 이직확인서 처리 시 유의사항\n\n상실사유와 이직확인서의 일치: 4대보험 상실신고서에 기재하는 '상실사유'와 고용센터에 제출하는 '이직확인서' 상의 구체적 이직 사유는 반드시 일치해야 합니다. 코드가 상이할 경우 고용센터로부터 소명 요청을 받을 수 있습니다.\n\n허위 신고 시 과태료 부과: 근로자의 실업급여 수급을 도와주기 위해 자진퇴사(11번"
+        },
+        {
+          "rank": 6,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 2,
+          "score": 0.3774,
+          "passed_to_reranker": true,
+          "text_excerpt": "마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n\n거절당하였다. 이때서야 신용등급의 중요성을 인식하고 평소 신용\n\n관리를 소홀히 한 것을 후회하였다.\n\n사례\n\n● 직장인 김○○(38세)씨는 할부로 자동차를 구입하였는데, 신용관리의\n\n중요성을 인식하지 못하고 할부금을 연체하여 신용등급이 5등급\n\n으로 하락하였다. 전세금 마련을 위해 은행으로부터 5"
+        },
+        {
+          "rank": 7,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 3,
+          "score": 0.3582,
+          "passed_to_reranker": true,
+          "text_excerpt": "지기는 쉬워도 올리는 데는 긴 시간이 필요한 만큼 평소 자신의 신용\n\n꿀팁\n\n등급에 관심을 갖고 꾸준히 관리하는 것이 중요합니다.\n\n② 소액이라도 절대 연체하지 않기\n\n연체정보는 신용등급을 평가할 때 부정적인 영향을 미치는 가장\n\n중요한 요인입니다. 10만원 이상의 금액을 5영업일 이상 연체하면\n\n신용평점이나 신용등급이 하락하는 만큼, 좋은 신용등급을 받기"
+        },
+        {
+          "rank": 8,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 1,
+          "score": 0.3544,
+          "passed_to_reranker": true,
+          "text_excerpt": "제 목 : 금융꿀팁 200선 - ① 현명한 신용관리요령\n\n□ 금융감독원은 국민들이 일상적인 금융거래과정에서 알아두면\n\n유익한 실용금융정보(금융꿀팁) 200가지를 선정, 알기 쉽게 정리\n\n하여\n\n◦ 매주 1~3가지씩 보도참고자료를 통해 안내하고\n\n◦ 동시에 2016.9.1일 개설 예정인 금융소비자정보 포털사이트 “파인”\n\n(FINE)에도 게시할 방침임\n\n□ "
+        },
+        {
+          "rank": 9,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 5,
+          "score": 0.3493,
+          "passed_to_reranker": false,
+          "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+        },
+        {
+          "rank": 10,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 3,
+          "score": 0.344,
+          "passed_to_reranker": false,
+          "text_excerpt": "폐업 도산 |\n| 2. 회사사정에 의 한 이직 | 경영상해고(23) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 23. 경영상 필요 및 회사불황으로 인원감축 등에 의한 퇴사(해고 권고사직 명예 퇴직 포함) |\n| 2. 회사사정에 의 한 이직 | 근로조건변동(24) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 26. 근로자의 귀책사유에 의한 징"
+        },
+        {
+          "rank": 11,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 4,
+          "score": 0.3436,
+          "passed_to_reranker": false,
+          "text_excerpt": "기타 | 고용보험 비적용(41) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |\n| 4. 기타 | 이중고용(42) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |"
+        },
+        {
+          "rank": 12,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 6,
+          "score": 0.3428,
+          "passed_to_reranker": false,
+          "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+        },
+        {
+          "rank": 13,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 13,
+          "score": 0.337,
+          "passed_to_reranker": false,
+          "text_excerpt": "⑩ 신용관리체험단 활용하기\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n프로그램을 활용하면 도움을 받을 수 있습니다. |\n|---|---|"
+        },
+        {
+          "rank": 14,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 2,
+          "score": 0.3362,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 대분류(4개) | 중분류 (변경 전: 14개) | 대분류(4개) | 중분류(변경 후: 8개) |\n|---|---|---|---|\n| 1. 개인사정에 의 한 이직 | 전직 자영업(11) | 1. 자진퇴사 | 11.개인사정으로 인한 자진퇴사 |\n| 1. 개인사정에 의 한 이직 | 결혼출산,\t거주지\t변경 등 가사사정(12) | 1. 자진퇴사 | 11.개인사정"
+        },
+        {
+          "rank": 15,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 11,
+          "score": 0.3331,
+          "passed_to_reranker": false,
+          "text_excerpt": "하면 신용등급 개선에 도움을 받을 수 있습니다.\n\n⑩ 신용관리체험단 활용하기\n\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n\n프로그램을 활용하면 도움을 받을 수 있습니다."
+        },
+        {
+          "rank": 16,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 7,
+          "score": 0.3294,
+          "passed_to_reranker": false,
+          "text_excerpt": "[코드 23] 경영상 필요 및 인원 감축 등에 의한 퇴사\n\n적용 대상: 경영 악화, 부서 폐지, 직제 개편 등에 따른 희망퇴직, 명예퇴직, 권고사직 등.\n\n주의사항: 이 코드로 상실신고가 들어가면 회사는 향후 일정 기간 동안 고용유지지원금 등 각종 정부 지원금 혜택을 받는 데 제한이 생길 수 있습니다. 단순한 업무 부적응으로 인한 퇴사를 무분별하게 23번으"
+        },
+        {
+          "rank": 17,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 9,
+          "score": 0.3091,
+          "passed_to_reranker": false,
+          "text_excerpt": "## 신고 기한 및 위반 시 제재 사항 (과태료 기준)\n\n상실신고 및 이직확인서 처리는 법정 기한이 엄격하게 정해져 있으며, 이를 위반하거나 거짓으로 신고할 경우 사업장에 과태료가 부과될 수 있으므로 인사 담당자의 각별한 주의가 필요합니다.\n\n## 법정 신고 기한\n\n피보험자격 상실신고서: 근로자가 퇴사한 날(상실일)이 속하는 달의 다음 달 15일까지 관할 "
+        },
+        {
+          "rank": 18,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 8,
+          "score": 0.306,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 꿀팁 | ③ 신용카드 보다는 체크카드 사용하기\n신용등급에 결정적인 영향을 미치는 연체를 피하는 첫 걸음은\n자신의 상환능력을 벗어난 카드사용을 자제하는 것입니다. 그리고\n이를 실천하기 위한 안전판이 신용카드 보다는 체크카드를 사용하는\n것입니다.\n④ 연체는 오래된 것부터 상환하기\n불가피하게 연체가 발생할 경우 가장 오래된 연체 건부터 상환\n해야 연체로 인한"
+        },
+        {
+          "rank": 19,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 10,
+          "score": 0.2117,
+          "passed_to_reranker": false,
+          "text_excerpt": "당사가 제공하는 디지털 트윈과 3D 시뮬레이션 기술은 물리적인 시제품 제작(Prototyping) 횟수를 획기적으로 줄여주어 산업 현장의 폐기물 감소와 탄소 배출 절감에 직접적으로 기여하고 있습니다. 또한 임직원을 위한 일하기 좋은 환경 조성, 지역 사회와의 상생을 위한 꾸준한 사회 공헌 활동, 투명하고 윤리적인 경영 활동을 통해 사회적 책임을 다하는 존경"
+        },
+        {
+          "rank": 20,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 7,
+          "score": 0.2027,
+          "passed_to_reranker": false,
+          "text_excerpt": "이러한 기술력은 제조 현장을 넘어 공공기관의 재난 대피 훈련, 교육기관의 실감형 학습, 문화/관광 분야의 가상 투어 플랫폼 등 산업 전반으로 폭넓게 확산 적용되고 있습니다.\n\n(3) AI 기반 스마트 예지보전 및 빅데이터 최적화\n공장 내 수많은 설비에서 발생하는 방대한 센서 데이터(IoT)를 실시간으로 수집하고, 독자적인 AI 머신러닝 알고리즘으로 분석하여"
+        },
+        {
+          "rank": 21,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 3,
+          "score": 0.1678,
+          "passed_to_reranker": false,
+          "text_excerpt": "핵심 경쟁력\n- 풍부한 산업별(항공, 자동차, 하이테크, 소비재 등) 구축 경험과 노하우\n- 검증된 글로벌 솔루션(다쏘시스템 등)과 자체 개발 솔루션의 융합\n- 전문 엔지니어 및 개발 인력을 통한 체계적인 기술 지원 및 유지보수\n\n5. 오시는 길 및 연락처\n- 본사: 서울특별시 금천구 가산디지털2로 43-14 한화비즈메트로2차 803~820호\n- R&D 센"
+        },
+        {
+          "rank": 22,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 4,
+          "score": 0.1574,
+          "passed_to_reranker": false,
+          "text_excerpt": "둘째, 지속적인 혁신(Continuous Innovation)입니다. 빠르게 변화하는 4차 산업혁명 시대에 발맞춰 신기술(AI, 빅데이터, XR 등)에 대한 R&D 투자를 아끼지 않으며, 기술 리더십을 굳건히 확보하고 있습니다. 셋째, 신뢰와 상생 파트너십(Trust & Partnership)입니다. 고객, 임직원, 글로벌 협력사와의 투명한 소통을 통해 장"
+        },
+        {
+          "rank": 23,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 1,
+          "score": 0.1441,
+          "passed_to_reranker": false,
+          "text_excerpt": "[이즈파크 회사 소개서]\n\n[ Infinite Solution Park - 해법을 향한 무한한 공간, 이즈파크 ]\n\n1. CEO 인사말\n이즈파크는 2009년 창업 이래, 4차산업혁명 핵심 ICT 솔루션 전문기업으로서 고객의 니즈에 맞는 솔루션과 새로운 기술 서비스를 통해 가치를 창출하고 산업발전에 기여하기 위한 최선의 노력을 다하고 있습니다.\n급변하는 IT"
+        },
+        {
+          "rank": 24,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 9,
+          "score": 0.1354,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [공공 및 교육/서비스] 정부 부처 및 지자체와 협력하여 지역 관광 명소나 역사적 유적지를 메타버스 공간에 재현하고, 대학 및 특성화 고등학교에 4차 산업 관련 실감형 실습 콘텐츠를 공급하여 차세대 인재 양성과 에듀테크(EduTech) 혁신을 이끌고 있습니다.\n\n10. 향후 비전 및 ESG 경영 실천 (Future Vision & ESG Manageme"
+        },
+        {
+          "rank": 25,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 6,
+          "score": 0.1272,
+          "passed_to_reranker": false,
+          "text_excerpt": "(1) 3DEXPERIENCE 플랫폼 (제품 수명주기 혁신)\n다쏘시스템의 3DEXPERIENCE 플랫폼은 사내외 모든 조직이 동일한 데이터를 기반으로 실시간 협업할 수 있는 강력한 환경을 제공합니다. 설계(CATIA), 엔지니어링 및 해석(SIMULIA), 프로젝트 및 데이터 관리(ENOVIA), 디지털 제조 및 생산 계획(DELMIA) 등 핵심 어플리케이"
+        },
+        {
+          "rank": 26,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 5,
+          "score": 0.1117,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [성장기] 2010년대 후반부터는 스마트 팩토리(Smart Factory) 구축 사업으로 비즈니스 영역을 대폭 확장하였습니다. MES, QMS 등 제조 실행 및 품질 관리 시스템을 고도화하며, 항공우주, 자동차 부품, 하이테크, 산업 기계 등 다양한 핵심 산업군에 성공적인 시스템 구축 레퍼런스를 확보했습니다.\n- [혁신기] 최근에는 4차 산업혁명의 핵심"
+        },
+        {
+          "rank": 27,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 2,
+          "score": 0.1038,
+          "passed_to_reranker": false,
+          "text_excerpt": "(1) 스마트 제조 솔루션 (Smart Manufacturing)\n- PLM(제품 수명주기 관리), CAD/CAM/CAE 솔루션 공급 및 컨설팅\n- Dassault Systèmes(다쏘시스템)의 3DEXPERIENCE 플랫폼 전문 파트너\n- MES(제조실행시스템), QMS(품질관리시스템) 구축을 통한 스마트 팩토리 구현\n\n(2) 디지털 트윈 및 XR (메타"
+        },
+        {
+          "rank": 28,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 8,
+          "score": 0.0974,
+          "passed_to_reranker": false,
+          "text_excerpt": "- [항공/우주 및 방위 산업] 수만 개의 부품으로 이루어진 고도의 정밀성이 요구되는 항공기 제조사를 위해, 복잡한 대형 어셈블리(Assembly) 관리와 안전성 확보를 위한 경량화 설계를 완벽히 지원하는 고도화된 PLM 시스템을 성공적으로 구축했습니다.\n- [자동차 및 모빌리티 산업] 전기차 및 자율주행 시대를 맞이하여 빠르게 변화하는 모빌리티 트렌드에 "
+        }
+      ],
+      "multi_query_ms": 1641.68,
+      "retrieval_ms": 2378.23,
+      "reranking_ms": 6730.71,
+      "gpt_ms": 1182.56,
+      "total_ms": 11933.74,
+      "client_total_ms": 11950.39,
+      "answer": "다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 전달되어 신용등급 산정 시 반영됩니다. 이 경우 채무자가 연체하지 않더라도 보증인의 신용등급이 하락할 수 있으므로, 보증을 서는 것은 가급적 피하는 것이 좋습니다.",
+      "source": [
+        "현명한 신용관리 요령.pdf"
+      ],
+      "top_rerank_score": 0.9218,
+      "auto_retrieval_stage": {
+        "available": true,
+        "k": 28,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "credit_management_guide",
+            "chunk_index": 10
+          },
+          {
+            "rank": 2,
+            "collection": "credit_management_guide",
+            "chunk_index": 12
+          }
+        ]
+      },
+      "auto_rerank_stage": {
+        "available": true,
+        "k": 3,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "credit_management_guide",
+            "chunk_index": 10
+          },
+          {
+            "rank": 2,
+            "collection": "credit_management_guide",
+            "chunk_index": 12
+          }
+        ]
+      },
+      "auto_items": {
+        "matched": 2,
+        "total": 2,
+        "missing": []
+      },
+      "auto_refused": null
+    },
+    {
+      "question_id": "H-07",
+      "type": "의미 기반 질문",
+      "run": 1,
+      "question": "3DEXPERIENCE 플랫폼에서 설계 작업에 쓰이는 애플리케이션은 무엇인가요?",
+      "out_of_scope": false,
+      "selected_collections": "ALL(3) - Routing 미적용",
+      "retrieval_top_k": 8,
+      "retrieval_candidate_count": 28,
+      "rerank_candidate_count": 8,
+      "final_context_count": 3,
+      "multi_query_used": true,
+      "multi_queries": [
+        "3DEXPERIENCE 플랫폼에서 설계에 사용되는 애플리케이션은 무엇인가요?",
+        "3DEXPERIENCE에서 설계 작업을 지원하는 소프트웨어는 어떤 것들이 있나요?",
+        "3DEXPERIENCE 플랫폼 내 설계용 애플리케이션 종류는 무엇인가요?"
+      ],
+      "retrieved_docs": [
+        {
+          "rank": 1,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 6,
+          "splitter": "SentenceSplitter",
+          "retriever_score": 0.5845,
+          "rerank_score": 0.9069,
+          "text_excerpt": "(1) 3DEXPERIENCE 플랫폼 (제품 수명주기 혁신)\n다쏘시스템의 3DEXPERIENCE 플랫폼은 사내외 모든 조직이 동일한 데이터를 기반으로 실시간 협업할 수 있는 강력한 환경을 제공합니다. 설계(CATIA), 엔지니어링 및 해석(SIMULIA), 프로젝트 및 데이터 관리(ENOVIA), 디지털 제조 및 생산 계획(DELMIA) 등 핵심 어플리케이"
+        },
+        {
+          "rank": 2,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 2,
+          "splitter": "SentenceSplitter",
+          "retriever_score": 0.4759,
+          "rerank_score": 0.0149,
+          "text_excerpt": "(1) 스마트 제조 솔루션 (Smart Manufacturing)\n- PLM(제품 수명주기 관리), CAD/CAM/CAE 솔루션 공급 및 컨설팅\n- Dassault Systèmes(다쏘시스템)의 3DEXPERIENCE 플랫폼 전문 파트너\n- MES(제조실행시스템), QMS(품질관리시스템) 구축을 통한 스마트 팩토리 구현\n\n(2) 디지털 트윈 및 XR (메타"
+        },
+        {
+          "rank": 3,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 8,
+          "splitter": "SentenceSplitter",
+          "retriever_score": 0.3502,
+          "rerank_score": 0.0007,
+          "text_excerpt": "- [항공/우주 및 방위 산업] 수만 개의 부품으로 이루어진 고도의 정밀성이 요구되는 항공기 제조사를 위해, 복잡한 대형 어셈블리(Assembly) 관리와 안전성 확보를 위한 경량화 설계를 완벽히 지원하는 고도화된 PLM 시스템을 성공적으로 구축했습니다.\n- [자동차 및 모빌리티 산업] 전기차 및 자율주행 시대를 맞이하여 빠르게 변화하는 모빌리티 트렌드에 "
+        }
+      ],
+      "retrieval_candidates": [
+        {
+          "rank": 1,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 6,
+          "score": 0.5845,
+          "passed_to_reranker": true,
+          "text_excerpt": "(1) 3DEXPERIENCE 플랫폼 (제품 수명주기 혁신)\n다쏘시스템의 3DEXPERIENCE 플랫폼은 사내외 모든 조직이 동일한 데이터를 기반으로 실시간 협업할 수 있는 강력한 환경을 제공합니다. 설계(CATIA), 엔지니어링 및 해석(SIMULIA), 프로젝트 및 데이터 관리(ENOVIA), 디지털 제조 및 생산 계획(DELMIA) 등 핵심 어플리케이"
+        },
+        {
+          "rank": 2,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 2,
+          "score": 0.4759,
+          "passed_to_reranker": true,
+          "text_excerpt": "(1) 스마트 제조 솔루션 (Smart Manufacturing)\n- PLM(제품 수명주기 관리), CAD/CAM/CAE 솔루션 공급 및 컨설팅\n- Dassault Systèmes(다쏘시스템)의 3DEXPERIENCE 플랫폼 전문 파트너\n- MES(제조실행시스템), QMS(품질관리시스템) 구축을 통한 스마트 팩토리 구현\n\n(2) 디지털 트윈 및 XR (메타"
+        },
+        {
+          "rank": 3,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 4,
+          "score": 0.3567,
+          "passed_to_reranker": true,
+          "text_excerpt": "둘째, 지속적인 혁신(Continuous Innovation)입니다. 빠르게 변화하는 4차 산업혁명 시대에 발맞춰 신기술(AI, 빅데이터, XR 등)에 대한 R&D 투자를 아끼지 않으며, 기술 리더십을 굳건히 확보하고 있습니다. 셋째, 신뢰와 상생 파트너십(Trust & Partnership)입니다. 고객, 임직원, 글로벌 협력사와의 투명한 소통을 통해 장"
+        },
+        {
+          "rank": 4,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 7,
+          "score": 0.354,
+          "passed_to_reranker": true,
+          "text_excerpt": "이러한 기술력은 제조 현장을 넘어 공공기관의 재난 대피 훈련, 교육기관의 실감형 학습, 문화/관광 분야의 가상 투어 플랫폼 등 산업 전반으로 폭넓게 확산 적용되고 있습니다.\n\n(3) AI 기반 스마트 예지보전 및 빅데이터 최적화\n공장 내 수많은 설비에서 발생하는 방대한 센서 데이터(IoT)를 실시간으로 수집하고, 독자적인 AI 머신러닝 알고리즘으로 분석하여"
+        },
+        {
+          "rank": 5,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 8,
+          "score": 0.3502,
+          "passed_to_reranker": true,
+          "text_excerpt": "- [항공/우주 및 방위 산업] 수만 개의 부품으로 이루어진 고도의 정밀성이 요구되는 항공기 제조사를 위해, 복잡한 대형 어셈블리(Assembly) 관리와 안전성 확보를 위한 경량화 설계를 완벽히 지원하는 고도화된 PLM 시스템을 성공적으로 구축했습니다.\n- [자동차 및 모빌리티 산업] 전기차 및 자율주행 시대를 맞이하여 빠르게 변화하는 모빌리티 트렌드에 "
+        },
+        {
+          "rank": 6,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 10,
+          "score": 0.3491,
+          "passed_to_reranker": true,
+          "text_excerpt": "당사가 제공하는 디지털 트윈과 3D 시뮬레이션 기술은 물리적인 시제품 제작(Prototyping) 횟수를 획기적으로 줄여주어 산업 현장의 폐기물 감소와 탄소 배출 절감에 직접적으로 기여하고 있습니다. 또한 임직원을 위한 일하기 좋은 환경 조성, 지역 사회와의 상생을 위한 꾸준한 사회 공헌 활동, 투명하고 윤리적인 경영 활동을 통해 사회적 책임을 다하는 존경"
+        },
+        {
+          "rank": 7,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 5,
+          "score": 0.3036,
+          "passed_to_reranker": true,
+          "text_excerpt": "- [성장기] 2010년대 후반부터는 스마트 팩토리(Smart Factory) 구축 사업으로 비즈니스 영역을 대폭 확장하였습니다. MES, QMS 등 제조 실행 및 품질 관리 시스템을 고도화하며, 항공우주, 자동차 부품, 하이테크, 산업 기계 등 다양한 핵심 산업군에 성공적인 시스템 구축 레퍼런스를 확보했습니다.\n- [혁신기] 최근에는 4차 산업혁명의 핵심"
+        },
+        {
+          "rank": 8,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 9,
+          "score": 0.2816,
+          "passed_to_reranker": true,
+          "text_excerpt": "- [공공 및 교육/서비스] 정부 부처 및 지자체와 협력하여 지역 관광 명소나 역사적 유적지를 메타버스 공간에 재현하고, 대학 및 특성화 고등학교에 4차 산업 관련 실감형 실습 콘텐츠를 공급하여 차세대 인재 양성과 에듀테크(EduTech) 혁신을 이끌고 있습니다.\n\n10. 향후 비전 및 ESG 경영 실천 (Future Vision & ESG Manageme"
+        },
+        {
+          "rank": 9,
+          "collection": "ispark_company_profile",
+          "file": "이즈파크 회사 소개서.txt",
+          "chunk_index": 1,
+          "score": 0.267,
+          "passed_to_reranker": false,
+          "text_excerpt": "[이즈파크 회사 소개서]\n\n[ Infinite Solution Park - 해법을 향한 무한한 공간, 이즈파크 ]\n\n1. CEO 인사말\n이즈파크는 2009년 창업 이래, 4차산업혁명 핵심 ICT 솔루션 전문기업으로서 고객의 니즈에 맞는 솔루션과 새로운 기술 서비스를 통해 가치를 창출하고 산업발전에 기여하기 위한 최선의 노력을 다하고 있습니다.\n급변하는 IT"
+        },
+        {
+          "rank": 10,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 11,
+          "score": 0.2075,
+          "passed_to_reranker": false,
+          "text_excerpt": "하면 신용등급 개선에 도움을 받을 수 있습니다.\n\n⑩ 신용관리체험단 활용하기\n\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n\n프로그램을 활용하면 도움을 받을 수 있습니다."
+        },
+        {
+          "rank": 11,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 13,
+          "score": 0.1985,
+          "passed_to_reranker": false,
+          "text_excerpt": "⑩ 신용관리체험단 활용하기\n신용조회회사들은 현명한 신용관리요령 등을 알려주는 신용관리\n체험단을 온․오프라인을 통해 운용하거나 운용할 예정입니다. 적극\n적인 신용관리로 자신의 신용등급을 올리고자 하는 사람은 이러한\n프로그램을 활용하면 도움을 받을 수 있습니다. |\n|---|---|"
+        },
+        {
+          "rank": 12,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 4,
+          "score": 0.1605,
+          "passed_to_reranker": false,
+          "text_excerpt": "기타 | 고용보험 비적용(41) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |\n| 4. 기타 | 이중고용(42) | 4. 기타 | 41. 고용보험 비적용, 이중 고용 |"
+        },
+        {
+          "rank": 13,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 6,
+          "score": 0.1561,
+          "passed_to_reranker": false,
+          "text_excerpt": "③ 신용카드 보다는 체크카드 사용하기\n\n신용등급에 결정적인 영향을 미치는 연체를 피하는 첫 걸음은\n\n자신의 상환능력을 벗어난 카드사용을 자제하는 것입니다. 그리고\n\n이를 실천하기 위한 안전판이 신용카드 보다는 체크카드를 사용하는\n\n것입니다.\n\n④ 연체는 오래된 것부터 상환하기\n\n불가피하게 연체가 발생할 경우 가장 오래된 연체 건부터 상환\n\n해야 연체로 인한"
+        },
+        {
+          "rank": 14,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 8,
+          "score": 0.156,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 꿀팁 | ③ 신용카드 보다는 체크카드 사용하기\n신용등급에 결정적인 영향을 미치는 연체를 피하는 첫 걸음은\n자신의 상환능력을 벗어난 카드사용을 자제하는 것입니다. 그리고\n이를 실천하기 위한 안전판이 신용카드 보다는 체크카드를 사용하는\n것입니다.\n④ 연체는 오래된 것부터 상환하기\n불가피하게 연체가 발생할 경우 가장 오래된 연체 건부터 상환\n해야 연체로 인한"
+        },
+        {
+          "rank": 15,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 1,
+          "score": 0.1505,
+          "passed_to_reranker": false,
+          "text_excerpt": "실사유 분류 변경 내용(대분류․중분류)"
+        },
+        {
+          "rank": 16,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 5,
+          "score": 0.1419,
+          "passed_to_reranker": false,
+          "text_excerpt": "주요 개편 특징 및 시사점\n\n이번 상실사유 분류 체계 개편은 신고 오류를 줄이고, 근로자의 구직급여(실업급여) 수급 여부를 보다 명확하게 판단하기 위해 진행되었습니다.\n\n자진퇴사 사유의 명확화: 기존에는 전직, 가사사정, 질병 등 자진퇴사 사유가 불필요하게 세분화되어 있었습니다. 이를 단순 '개인사정(11)'과 '회사측 원인 제공에 의한 자진퇴사(12)'로"
+        },
+        {
+          "rank": 17,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 6,
+          "score": 0.1419,
+          "passed_to_reranker": false,
+          "text_excerpt": "[코드 11] 개인사정으로 인한 자진퇴사\n\n적용 대상: 근로자 본인의 순수한 변심, 타사 이직, 유학, 휴식, 질병, 부상, 가사 사정(결혼, 육아 등)으로 인해 스스로 사직서를 제출한 경우.\n\n주의사항: 원칙적으로 실업급여 수급이 불가능한 코드입니다. 단, 질병이나 육아 등으로 인해 '회사에 휴직을 요청했으나 거부당해 어쩔 수 없이 퇴사한 경우' 등 특정"
+        },
+        {
+          "rank": 18,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 3,
+          "score": 0.1354,
+          "passed_to_reranker": false,
+          "text_excerpt": "폐업 도산 |\n| 2. 회사사정에 의 한 이직 | 경영상해고(23) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 23. 경영상 필요 및 회사불황으로 인원감축 등에 의한 퇴사(해고 권고사직 명예 퇴직 포함) |\n| 2. 회사사정에 의 한 이직 | 근로조건변동(24) | 2.회사사정 과 근로자 귀책사유에 의한 이직 | 26. 근로자의 귀책사유에 의한 징"
+        },
+        {
+          "rank": 19,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 4,
+          "score": 0.1336,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 제목 | ‘현명한 신용관리요령’ |\n|---|---|\n| 사례 | ● 사회초년생 이○○(28세)씨는 3개의 신용카드를 사용하고 있었는데,\n결제일자를 제대로 확인하지 않아 연체가 발생하였고, 이로 인해\n신용등급이 7등급으로 하락하였다. 결혼준비를 하면서 부족한 보증금을\n마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n거절당하였다. 이때서야 신용"
+        },
+        {
+          "rank": 20,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 3,
+          "score": 0.1313,
+          "passed_to_reranker": false,
+          "text_excerpt": "지기는 쉬워도 올리는 데는 긴 시간이 필요한 만큼 평소 자신의 신용\n\n꿀팁\n\n등급에 관심을 갖고 꾸준히 관리하는 것이 중요합니다.\n\n② 소액이라도 절대 연체하지 않기\n\n연체정보는 신용등급을 평가할 때 부정적인 영향을 미치는 가장\n\n중요한 요인입니다. 10만원 이상의 금액을 5영업일 이상 연체하면\n\n신용평점이나 신용등급이 하락하는 만큼, 좋은 신용등급을 받기"
+        },
+        {
+          "rank": 21,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 2,
+          "score": 0.1269,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 대분류(4개) | 중분류 (변경 전: 14개) | 대분류(4개) | 중분류(변경 후: 8개) |\n|---|---|---|---|\n| 1. 개인사정에 의 한 이직 | 전직 자영업(11) | 1. 자진퇴사 | 11.개인사정으로 인한 자진퇴사 |\n| 1. 개인사정에 의 한 이직 | 결혼출산,\t거주지\t변경 등 가사사정(12) | 1. 자진퇴사 | 11.개인사정"
+        },
+        {
+          "rank": 22,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 9,
+          "score": 0.1193,
+          "passed_to_reranker": false,
+          "text_excerpt": "신용등급은 보통 신용\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n하는 것이 좋습니다. |\n|---|---|"
+        },
+        {
+          "rank": 23,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 7,
+          "score": 0.1169,
+          "passed_to_reranker": false,
+          "text_excerpt": "꾸준히 이용하는 것이 신용등급에 유리합니다. 신용등급은 보통 신용\n\n조회회사(CB)에서 산정한 것을 바탕으로 각 금융회사에서 거래실적\n\n등을 반영, 다시 산정하여 적용하기 때문입니다.\n\n또한 부주의로 인한 연체를 피하기 위해서는 카드대금이나 통신․\n\n공공요금 등 주기적으로 납부하는 대금은 가급적 자동이체를 이용\n\n하는 것이 좋습니다."
+        },
+        {
+          "rank": 24,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 12,
+          "score": 0.1164,
+          "passed_to_reranker": false,
+          "text_excerpt": "| 꿀팁 | ⑦ 타인을 위한 보증은 가급적 피하기\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n것은 가급적 피하는 것이 좋습니다.\n⑧ 대출 금융회사 신중하게 결정하기\n신용조회회사들은 신용등급 산정시 대부업체나 제"
+        },
+        {
+          "rank": 25,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 2,
+          "score": 0.0993,
+          "passed_to_reranker": false,
+          "text_excerpt": "마련하기 위해 3천만원을 은행에서 신용대출 받고자 하였으나\n\n거절당하였다. 이때서야 신용등급의 중요성을 인식하고 평소 신용\n\n관리를 소홀히 한 것을 후회하였다.\n\n사례\n\n● 직장인 김○○(38세)씨는 할부로 자동차를 구입하였는데, 신용관리의\n\n중요성을 인식하지 못하고 할부금을 연체하여 신용등급이 5등급\n\n으로 하락하였다. 전세금 마련을 위해 은행으로부터 5"
+        },
+        {
+          "rank": 26,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 7,
+          "score": 0.0903,
+          "passed_to_reranker": false,
+          "text_excerpt": "[코드 23] 경영상 필요 및 인원 감축 등에 의한 퇴사\n\n적용 대상: 경영 악화, 부서 폐지, 직제 개편 등에 따른 희망퇴직, 명예퇴직, 권고사직 등.\n\n주의사항: 이 코드로 상실신고가 들어가면 회사는 향후 일정 기간 동안 고용유지지원금 등 각종 정부 지원금 혜택을 받는 데 제한이 생길 수 있습니다. 단순한 업무 부적응으로 인한 퇴사를 무분별하게 23번으"
+        },
+        {
+          "rank": 27,
+          "collection": "credit_management_guide",
+          "file": "현명한 신용관리 요령.pdf",
+          "chunk_index": 10,
+          "score": 0.0885,
+          "passed_to_reranker": false,
+          "text_excerpt": "⑦ 타인을 위한 보증은 가급적 피하기\n\n다른 사람을 위해 보증을 서면 보증내역이 신용조회회사에 보내져\n\n신용등급을 산정할 때 반영됩니다. 이 경우 채무자가 연체를 하지\n\n않더라도 보증인의 신용등급이 하락할 수 있는 만큼, 보증을 서는\n\n것은 가급적 피하는 것이 좋습니다.\n\n⑧ 대출 금융회사 신중하게 결정하기\n\n신용조회회사들은 신용등급 산정시 대부업체나 제2"
+        },
+        {
+          "rank": 28,
+          "collection": "due_diligence_reason_codes",
+          "file": "실사유 코드.docx",
+          "chunk_index": 9,
+          "score": 0.0811,
+          "passed_to_reranker": false,
+          "text_excerpt": "## 신고 기한 및 위반 시 제재 사항 (과태료 기준)\n\n상실신고 및 이직확인서 처리는 법정 기한이 엄격하게 정해져 있으며, 이를 위반하거나 거짓으로 신고할 경우 사업장에 과태료가 부과될 수 있으므로 인사 담당자의 각별한 주의가 필요합니다.\n\n## 법정 신고 기한\n\n피보험자격 상실신고서: 근로자가 퇴사한 날(상실일)이 속하는 달의 다음 달 15일까지 관할 "
+        }
+      ],
+      "multi_query_ms": 1656.44,
+      "retrieval_ms": 2279.66,
+      "reranking_ms": 6738.18,
+      "gpt_ms": 1208.41,
+      "total_ms": 11883.44,
+      "client_total_ms": 11898.69,
+      "answer": "3DEXPERIENCE 플랫폼에서 설계 작업에 쓰이는 애플리케이션은 CATIA입니다. 이 플랫폼은 설계(CATIA), 엔지니어링 및 해석(SIMULIA), 프로젝트 및 데이터 관리(ENOVIA), 디지털 제조 및 생산 계획(DELMIA) 등 핵심 애플리케이션을 하나로 통합하여 제공합니다.",
+      "source": [
+        "이즈파크 회사 소개서.txt"
+      ],
+      "top_rerank_score": 0.9069,
+      "auto_retrieval_stage": {
+        "available": true,
+        "k": 28,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "ispark_company_profile",
+            "chunk_index": 6
+          }
+        ]
+      },
+      "auto_rerank_stage": {
+        "available": true,
+        "k": 3,
+        "hit": true,
+        "best_rank": 1,
+        "matched_keys": [
+          {
+            "rank": 1,
+            "collection": "ispark_company_profile",
+            "chunk_index": 6
+          }
+        ]
+      },
+      "auto_items": {
+        "matched": 1,
+        "total": 1,
+        "missing": []
+      },
+      "auto_refused": null
+    }
+  ]
+}

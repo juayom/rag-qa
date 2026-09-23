@@ -12,6 +12,10 @@ from vectorstore.retriever import (
     is_retrieval_sufficient,
 )
 from vectorstore.embedding import get_embedding_model
+from vectorstore.routing import (
+    build_collection_vectors,
+    select_collections,
+)
 from llm.multi_query import generate_multi_queries
 from llm.reranker import rerank
 from llm.openai_llm import generate_answer
@@ -29,10 +33,13 @@ app.add_middleware(
 
 # Embedding Model, Index는 서버 시작 시 한 번만 생성
 embed_model = get_embedding_model()
-indexes = [
-    get_index(embed_model, collection_name)
+indexes = {
+    collection_name: get_index(embed_model, collection_name)
     for collection_name in COLLECTION_NAMES
-]
+}
+
+# Collection Routing용 설명문 임베딩도 서버 시작 시 한 번만 생성한다.
+collection_vectors = build_collection_vectors(embed_model)
 
 
 class ChatRequest(BaseModel):
@@ -59,9 +66,19 @@ def chat(request: ChatRequest):
     retrieval_top_k = get_dynamic_top_k(question)
     rerank_top_k = get_rerank_top_k(question)
     rerank_candidate_limit = get_rerank_candidate_limit(question)
+
+    # Collection Routing
+    routing_start = time.perf_counter()
+    selected_collections, routing_scores, routing_fallback = select_collections(
+        question,
+        embed_model,
+        collection_vectors
+    )
+    routing_time = time.perf_counter() - routing_start
+
     retrievers = [
-        get_retriever(index, top_k=retrieval_top_k)
-        for index in indexes
+        get_retriever(indexes[collection_name], top_k=retrieval_top_k)
+        for collection_name in selected_collections
     ]
 
     # 원본 질문으로 1차 Retrieval
@@ -95,6 +112,10 @@ def chat(request: ChatRequest):
         retrieval_time += time.perf_counter() - additional_retrieval_start
 
     print("=" * 80)
+    print(f"Collection Routing: {', '.join(selected_collections)}")
+    if routing_fallback:
+        print(f"  fallback: {routing_fallback}")
+    print(f"  scores: {routing_scores}")
     print(f"Adaptive Multi Query: {'실행' if multi_query_used else '미실행'}")
     print("=" * 80)
 
@@ -225,6 +246,9 @@ def chat(request: ChatRequest):
         "question": question,
         "queries": additional_queries,
         "multi_query_used": multi_query_used,
+        "selected_collections": selected_collections,
+        "routing_scores": routing_scores,
+        "routing_fallback": routing_fallback,
         "retrieval_top_k": retrieval_top_k,
         "retrieval_candidate_count": len(retrieval_candidates),
         "retrieval_candidates": retrieval_candidate_docs,
@@ -235,6 +259,7 @@ def chat(request: ChatRequest):
         "retrieved_count": len(retrieved_docs),
         "response_time_ms": response_time,
         "timings_ms": {
+            "routing": round(routing_time * 1000, 2),
             "multi_query": round(multi_query_time * 1000, 2),
             "retrieval": round(retrieval_time * 1000, 2),
             "reranking": round(rerank_time * 1000, 2),
