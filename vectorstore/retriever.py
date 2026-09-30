@@ -6,7 +6,7 @@ DEFAULT_TOP_K = 8
 LIST_TOP_K = 15
 DEFAULT_RERANK_TOP_K = 3
 LIST_RERANK_TOP_K = 10
-DEFAULT_RERANK_CANDIDATES = 8
+DEFAULT_RERANK_CANDIDATES = 10
 LIST_RERANK_CANDIDATES = 15
 MIN_RELEVANT_SCORE = 0.5
 
@@ -37,6 +37,20 @@ def get_rerank_candidate_limit(question):
         if is_list_question(question)
         else DEFAULT_RERANK_CANDIDATES
     )
+
+
+
+MIN_TOP_SCORE = 0.40
+
+
+def is_retrieval_sufficient_v2(nodes):
+    """1차 검색의 최상위 점수만으로 충분 여부를 판정한다."""
+    scores = [
+        (getattr(node, "score", None) or 0)
+        for node in nodes
+    ]
+
+    return bool(scores) and max(scores) >= MIN_TOP_SCORE
 
 
 def is_retrieval_sufficient(nodes, required_count):

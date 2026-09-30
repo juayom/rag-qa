@@ -242,6 +242,28 @@ button:hover {
 
 }
 
+.retriever-note{
+
+    color:#888;
+
+    font-size:0.9em;
+
+    font-style:italic;
+
+    margin:0 0 10px 0;
+
+}
+
+.retriever-score{
+
+    color:#888;
+
+    font-size:0.85em;
+
+    margin-left:6px;
+
+}
+
 /* ---------- Retriever ---------- */
 
 .retriever-card h4{

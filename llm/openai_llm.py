@@ -9,6 +9,29 @@ client = OpenAI(
 )
 
 
+
+REFUSAL_MARKERS = (
+    "찾을 수 없",
+    "확인할 수 없",
+    "알려드릴 수 없",
+    "포함되어 있지 않",
+    "언급되어 있지 않",
+    "명시되어 있지 않",
+)
+
+
+def is_refusal(answer):
+    """답변이 '문서에 근거가 없다'는 거절인지 판정한다.
+
+    거절 답변에 출처를 표시하면 실제로는 근거로 쓰이지 않은 문서를 근거인 것처럼
+    주장하게 된다(GUIDE 10항 "잘못된 출처를 표시하지 않음").
+    판정 결과는 표시 계층에만 쓰고 검색·재랭킹·답변 생성에는 관여하지 않는다.
+    """
+    text = answer or ""
+
+    return any(marker in text for marker in REFUSAL_MARKERS)
+
+
 def generate_answer(question, documents):
 
     context = "\n\n".join(documents)

@@ -1,6 +1,24 @@
 import { useState } from "react";
 import api from "../services/api";
 
+// 화면에 붙일 짧은 원인 표시
+function describeError(err) {
+  if (err?.response) {
+    return err.response.status;
+  }
+
+  // 응답 자체가 없는 경우
+  if (err?.code === "ECONNABORTED") {
+    return "응답 시간 초과";
+  }
+
+  if (err?.code === "ERR_NETWORK") {
+    return "서버에 연결할 수 없음 / CORS 차단";
+  }
+
+  return err?.code || "알 수 없는 오류";
+}
+
 function ChatBox() {
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState([]);
@@ -31,7 +49,7 @@ function ChatBox() {
         question: userQuestion,
       });
 
-    setMessages((prev) => [
+      setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
@@ -40,20 +58,24 @@ function ChatBox() {
 
           sources: res.data.sources,
           retrieved_docs: res.data.retrieved_docs,
+          refused: res.data.refused,
 
           retrieved_count: res.data.retrieved_count,
           response_time: res.data.response_time_ms,
-          top_similarity: res.data.top_similarity,
+          top_similarity: res.data.top_rerank_score,
 
-          
+
         },
-        ]);
+      ]);
     } catch (err) {
+      // 원인 파악용 전체 오류는 콘솔에만 남김
+      console.error("[/chat] 요청 실패", err);
+
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          text: "오류가 발생했습니다.",
+          text: `오류가 발생했습니다 (${describeError(err)})`,
           sources: [],
         },
       ]);
@@ -81,151 +103,163 @@ function ChatBox() {
         )}
 
         {messages.map((msg, index) => (
-            <div
-                key={index}
-                className={
-                msg.role === "user"
-                    ? "message user"
-                    : "message assistant"
-                }
-            >
-                <div className="role">
-                {msg.role === "user"
-                    ? "🙂 질문"
-                    : "🤖 답변"}
-                </div>
-                {msg.role === "assistant" &&
-                  msg.queries &&
-                  msg.queries.length > 0 && (
+          <div
+            key={index}
+            className={
+              msg.role === "user"
+                ? "message user"
+                : "message assistant"
+            }
+          >
+            <div className="role">
+              {msg.role === "user"
+                ? "🙂 질문"
+                : "🤖 답변"}
+            </div>
+            {msg.role === "assistant" &&
+              msg.queries &&
+              msg.queries.length > 0 && (
 
-                  <div className="multiquery-box">
+                <div className="multiquery-box">
 
-                      <div className="multiquery-title">
-                          🔍 Multi Query Generation
-                      </div>
-
-                      <ul className="multiquery-list">
-
-                          {msg.queries.map((q, idx) => (
-
-                              <li key={idx}>
-                                  {q}
-                              </li>
-
-                          ))}
-
-                      </ul>
-
+                  <div className="multiquery-title">
+                    🔍 Multi Query Generation
                   </div>
 
-                  )}
-                <div className="text">
-                {msg.text}
-                </div>
-                {msg.role === "assistant" && (
-                    <div className="result-info">
+                  <ul className="multiquery-list">
 
-                        <span>
-                        📄 검색 Chunk :
-                        {msg.retrieved_count}
-                        </span>
+                    {msg.queries.map((q, idx) => (
 
-                        <span>
-                        ⏱ {msg.response_time} ms
-                        </span>
+                      <li key={idx}>
+                        {q}
+                      </li>
 
-                        <span>
-                        🎯 Similarity :
-                        {msg.top_similarity}
-                        </span>
-
-                    </div>
-                    )}
-
-                {msg.sources && msg.sources.length > 0 && (
-                <>
-                    <div className="source-title">
-                    📄 출처
-                    </div>
-
-                    <ul className="source-list">
-                    {msg.sources.map((source, i) => (
-                        <li key={i}>
-                        {source}
-                        </li>
                     ))}
-                    </ul>
-                </>
-                )}
 
-                {msg.retrieved_docs && (
-                <>
-                    <button
-                    className="toggle-btn"
-                    onClick={() =>
-                        setOpenRetriever((prev) => ({
-                        ...prev,
-                        [index]: !prev[index],
-                        }))
-                    }
-                    >
-                    {openRetriever[index]
-                        ? "📂 Search Process 결과 숨기기"
-                        : "📂 Search Process 결과 보기"}
-                    </button>
+                  </ul>
 
-                    {openRetriever[index] && (
-                    <div className="retriever-box">
+                </div>
 
-                        {msg.retrieved_docs.map((doc) => (
-                        <div
-                            key={doc.rank}
-                            className="retriever-card"
-                        >
-                            <h4>
-                            🔎 Retrieved Document #{doc.rank}
-                            </h4>
-
-                            <p>
-                            <b>파일</b> : {doc.file}
-                            </p>
-
-                            <p>
-                            <b>Chunk</b> : {doc.chunk}
-                            </p>
-
-                            <p>
-                            <b>Similarity</b>
-
-                            <span
-                            className={
-                            doc.score < 1
-                            ? "score-good"
-                            : doc.score < 2
-                            ? "score-mid"
-                            : "score-bad"
-                            }
-                            >
-
-                            {doc.score}
-
-                            </span>
-                            </p>
-
-                            <pre>
-            {doc.text}
-                            </pre>
-
-                        </div>
-                        ))}
-
-                    </div>
-                    )}
-                </>
-                )}
-
+              )}
+            <div className="text">
+              {msg.text}
             </div>
-            ))}
+            {msg.role === "assistant" && (
+              <div className="result-info">
+
+                <span>
+                  📄 검색 Chunk :
+                  {msg.retrieved_count}
+                </span>
+
+                <span>
+                  ⏱ {msg.response_time} ms
+                </span>
+
+                <span>
+                  🎯 Similarity :
+                  {msg.top_similarity}
+                </span>
+
+              </div>
+            )}
+
+            {msg.sources && msg.sources.length > 0 && (
+              <>
+                <div className="source-title">
+                  📄 출처
+                </div>
+
+                <ul className="source-list">
+                  {msg.sources.map((source, i) => (
+                    <li key={i}>
+                      {source}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+
+            {msg.retrieved_docs && (
+              <>
+                <button
+                  className="toggle-btn"
+                  onClick={() =>
+                    setOpenRetriever((prev) => ({
+                      ...prev,
+                      [index]: !prev[index],
+                    }))
+                  }
+                >
+                  {openRetriever[index]
+                    ? "📂 Search Process 결과 숨기기"
+                    : msg.refused
+                      ? "📂 참고: 검색 결과 보기 (답변 근거 아님)"
+                      : "📂 Search Process 결과 보기"}
+                </button>
+
+                {openRetriever[index] && (
+                  <div className="retriever-box">
+
+                    {msg.refused && (
+                      <p className="retriever-note">
+                        참고: 검색된 문서이나 최종 답변의 근거로 채택되지 않음
+                      </p>
+                    )}
+
+                    {msg.retrieved_docs.map((doc) => (
+                      <div
+                        key={doc.rank}
+                        className="retriever-card"
+                      >
+                        <h4>
+                          🔎 Retrieved Document #{doc.rank}
+                        </h4>
+
+                        <p>
+                          <b>파일</b> : {doc.file}
+                        </p>
+
+                        <p>
+                          <b>Chunk</b> : {doc.chunk}
+                        </p>
+
+                        <p>
+                          <b>Similarity</b>
+
+                          <span
+                            className={
+                              doc.rerank_score >= 0.5
+                                ? "score-good"
+                                : doc.rerank_score >= 0.1
+                                  ? "score-mid"
+                                  : "score-bad"
+                            }
+                          >
+
+                            {doc.rerank_score}
+
+                          </span>
+
+                          <span className="retriever-score">
+                            (retriever {doc.retriever_score})
+                          </span>
+                        </p>
+
+                        <pre>
+                          {doc.text}
+                        </pre>
+
+                      </div>
+                    ))}
+
+                  </div>
+                )}
+              </>
+            )}
+
+          </div>
+        ))}
 
         {loading && (
           <div className="loading">

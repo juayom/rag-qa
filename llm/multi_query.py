@@ -2,11 +2,46 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 
+from vectorstore.retriever import is_retrieval_sufficient, is_retrieval_sufficient_v2
+
 load_dotenv()
 
 client = OpenAI(
     api_key=os.getenv("OPENAI_API_KEY")
 )
+
+
+
+MULTI_QUERY_MODE = os.environ.get("RAG_MULTI_QUERY", "adaptive_v2")
+
+VALID_MULTI_QUERY_MODES = ("adaptive", "adaptive_v2", "off", "on")
+
+
+# 잘못된 환경변수는 기동 시점에 바로 실패시킨다.
+# 요청 처리 중에 터지면 측정이 절반쯤 진행된 뒤에야 알게 된다.
+if MULTI_QUERY_MODE not in VALID_MULTI_QUERY_MODES:
+    raise ValueError(
+        f"RAG_MULTI_QUERY 값이 올바르지 않다: {MULTI_QUERY_MODE!r} "
+        f"(가능한 값: {', '.join(VALID_MULTI_QUERY_MODES)})"
+    )
+
+
+def should_run_multi_query(nodes, required_count):
+    """Multi Query를 실행할지 판정한다.
+
+    adaptive에서는 기존과 똑같이 `not is_retrieval_sufficient(...)`를 그대로 쓴다.
+    판정 기준(`MIN_RELEVANT_SCORE`, `required_count`)은 손대지 않는다.
+    """
+    if MULTI_QUERY_MODE == "off":
+        return False
+
+    if MULTI_QUERY_MODE == "on":
+        return True
+
+    if MULTI_QUERY_MODE == "adaptive_v2":
+        return not is_retrieval_sufficient_v2(nodes)
+
+    return not is_retrieval_sufficient(nodes, required_count)
 
 
 def generate_multi_queries(question):

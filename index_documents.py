@@ -2,7 +2,11 @@ from pathlib import Path
 
 from preprocessing.document_loader import load_document
 from preprocessing.cleaner import clean_markdown
-from preprocessing.chunkers import sentence_split, structured_split
+from preprocessing.chunkers import (
+    sentence_split,
+    structured_split,
+    structured_split_v2,
+)
 
 from vectorstore.embedding import get_embedding_model
 from vectorstore.qdrant_store import get_index, reset_collection, save_nodes
@@ -30,9 +34,10 @@ for file_path, collection_name in DOCUMENT_COLLECTIONS.items():
 
         text = clean_markdown(text)
 
+        # PDF/DOCX 는 구조 기반 v2 를 쓴다.
         if file_path.suffix.lower() in (".pdf", ".docx"):
-            nodes = structured_split(text)
-            splitter_name = "StructuredSplitter"
+            nodes = structured_split_v2(text)
+            splitter_name = "StructuredSplitterV2"
         else:
             nodes = sentence_split(text)
             splitter_name = "SentenceSplitter"
@@ -46,7 +51,9 @@ for file_path, collection_name in DOCUMENT_COLLECTIONS.items():
             index=index,
             nodes=nodes,
             file_name=file_path.name,
-            splitter_name=splitter_name
+            splitter_name=splitter_name,
+            collection_name=collection_name,
+            source_type=file_path.suffix.lower().lstrip(".")
         )
 
         print("저장 완료")

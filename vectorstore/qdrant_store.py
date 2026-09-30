@@ -42,18 +42,31 @@ def get_index(embed_model, collection_name):
     )
 
 
-def save_nodes(index, nodes, file_name, splitter_name):
+EMBED_EXCLUDED_METADATA_KEYS = ["collection", "source_type"]
+
+
+def save_nodes(index, nodes, file_name, splitter_name,
+               collection_name=None, source_type=None):
     insert_nodes = []
 
     for i, node in enumerate(nodes):
+        metadata = {
+            "source": file_name,
+            "splitter": splitter_name,
+            "chunk_index": i + 1,
+            "chunk_length": len(node.text)
+        }
+
+        if collection_name is not None:
+            metadata["collection"] = collection_name
+
+        if source_type is not None:
+            metadata["source_type"] = source_type
+
         text_node = TextNode(
             text=node.text,
-            metadata={
-                "source": file_name,
-                "splitter": splitter_name,
-                "chunk_index": i + 1,
-                "chunk_length": len(node.text)
-            }
+            metadata=metadata,
+            excluded_embed_metadata_keys=list(EMBED_EXCLUDED_METADATA_KEYS)
         )
 
         insert_nodes.append(text_node)

@@ -3,10 +3,6 @@ import re
 import pdfplumber
 
 
-# 본문 전체가 테두리 박스(표) 안에 들어있는 PDF에서는 page.extract_text()가
-# 표 안의 글자까지 그대로 반환한다. 그 상태에서 표를 markdown으로 또 넣으면
-# 같은 내용이 두 번 적재된다. 아래 상수와 헬퍼는 "표 셀에 이미 있다고 증명된 줄만
-# 버린다"는 판정에 쓴다.
 MIN_DUPLICATE_LENGTH = 10
 
 
